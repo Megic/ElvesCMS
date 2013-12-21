@@ -1,0 +1,69 @@
+<?php
+require('../../class/connect.php');
+require('../../class/db_sql.php');
+require('../class/user.php');
+$link=db_connect();
+$Elves=new mysqlquery();
+$editor=1;
+eCheckCloseMods('member');//关闭模块
+$melve=$_POST['melve'];
+if(empty($melve))
+{
+	$melve=$_GET['melve'];
+}
+//导入文件
+if($melve=='ChangeSpaceStyle'||$melve=='DoSetSpace')
+{
+	include('spacecomfun.php');
+}
+elseif($melve=='AddMemberGbook'||$melve=='ReMemberGbook'||$melve=='DelMemberGbook'||$melve=='DelMemberGbook_All')
+{
+	include('gbookfun.php');
+}
+elseif($melve=='AddMemberFeedback'||$melve=='DelMemberFeedback'||$melve=='DelMemberFeedback_All')
+{
+	include('feedbackfun.php');
+}
+if($melve=="ChangeSpaceStyle")//选择空间模板
+{
+	ChangeSpaceStyle($_GET);
+}
+elseif($melve=="DoSetSpace")//设置空间信息
+{
+	DoSetSpace($_POST);
+}
+elseif($melve=="AddMemberGbook")//留言
+{
+	AddMemberGbook($_POST);
+}
+elseif($melve=="ReMemberGbook")//回复留言
+{
+	ReMemberGbook($_POST);
+}
+elseif($melve=="DelMemberGbook")//删除留言
+{
+	DelMemberGbook($_GET);
+}
+elseif($melve=="DelMemberGbook_All")//批量删除留言
+{
+	DelMemberGbook_All($_POST);
+}
+elseif($melve=="AddMemberFeedback")//提交反馈
+{
+	AddMemberFeedback($_POST);
+}
+elseif($melve=="DelMemberFeedback")//删除反馈
+{
+	DelMemberFeedback($_GET);
+}
+elseif($melve=="DelMemberFeedback_All")//批量删除反馈
+{
+	DelMemberFeedback_All($_POST);
+}
+else
+{
+	printerror("ErrorUrl","history.go(-1)",1);
+}
+db_close();
+$Elves=null;
+?>

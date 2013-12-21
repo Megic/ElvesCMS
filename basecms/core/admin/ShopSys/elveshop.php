@@ -1,0 +1,44 @@
+<?php
+define('ElvesCMSAdmin','1');
+require("../../class/connect.php");
+require("../../class/db_sql.php");
+require("../../class/functions.php");
+require("../../data/dbcache/class.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$editor=1;
+$melve=$_POST['melve'];
+if(empty($melve))
+{
+	$melve=$_GET['melve'];
+}
+//验证用户
+$lur=is_login();
+$logininid=$lur['userid'];
+$loginin=$lur['username'];
+$loginrnd=$lur['rnd'];
+$loginlevel=$lur['groupid'];
+$loginadminstyleid=$lur['adminstyleid'];
+require("class/hShopSysFun.php");
+
+if($melve=="SetShopSys")//商城参数设置
+{
+	ShopSys_set($_POST,$logininid,$loginin);
+}
+elseif($melve=="DdRetext")//后台订单备注
+{
+	ShopSys_DdRetext($_POST,$logininid,$loginin);
+}
+elseif($melve=='EditPretotal')//修改订单优惠价格
+{
+	ShopSys_EditPretotal($_POST,$logininid,$loginin);
+}
+elseif($melve=='DoCutMaxnum')//减少或还原库存
+{
+	Shopsys_DoCutMaxnum($_POST,$logininid,$loginin);
+}
+else
+{printerror("ErrorUrl","history.go(-1)");}
+db_close();
+$Elves=null;
+?>

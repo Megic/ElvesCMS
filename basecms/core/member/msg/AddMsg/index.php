@@ -1,0 +1,34 @@
+<?php
+require("../../../class/connect.php");
+require("../../../class/q_functions.php");
+require("../../../class/db_sql.php");
+require("../../class/user.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$editor=2;
+eCheckCloseMods('member');//关闭模块
+$user=islogin();
+$mid=(int)$_GET['mid'];
+$username=RepPostStr($_GET['username']);
+$re=$_GET['re'];
+if($mid)
+{
+	$r=$Elves->fetch1("select title,msgtext,from_username from {$dbtbpre}melveqmsg where mid=$mid and to_username='$user[username]' limit 1");
+	if(empty($username)&&$r['from_username']!=$user['username'])
+	{
+		$username=$r['from_username'];
+	}
+	$title=$r['title'];
+	$msgtext=$r['msgtext'];
+	//回复
+	if($re==1)
+	{
+		$title="Re:".$title;
+		$msgtext="\r\n"."------原文内容------\r\n".$msgtext;
+	}
+}
+//导入模板
+require(elve_PATH.'core/template/member/AddMsg.php');
+db_close();
+$Elves=null;
+?>

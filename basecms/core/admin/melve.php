@@ -1,0 +1,63 @@
+<?php
+define('ElvesCMSAdmin','1');
+require("../class/connect.php");
+require("../class/db_sql.php");
+require("../class/functions.php");
+require("../class/delpath.php");
+require("../class/copypath.php");
+require LoadLang("pub/fun.php");
+require("../class/t_functions.php");
+require("../data/dbcache/class.php");
+require("../data/dbcache/MemberLevel.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$melve=$_POST['melve'];
+if(empty($melve))
+{$melve=$_GET['melve'];}
+//验证用户
+$lur=is_login();
+$logininid=$lur['userid'];
+$loginin=$lur['username'];
+$loginrnd=$lur['rnd'];
+$loginlevel=$lur['groupid'];
+$loginadminstyleid=$lur['adminstyleid'];
+
+$incftp=0;
+if($public_r['phpmode'])
+{
+	include("../class/ftp.php");
+	$incftp=1;
+}
+//防采集
+if($public_r['opennotcj'])
+{
+	@include("../data/dbcache/notcj.php");
+}
+
+if($melve=="ReListHtml")//刷新信息列表
+{
+	$classid=$_GET['classid'];
+	ReListHtml($classid,0);
+}
+elseif($melve=="AddPostUrlData")//初使化远程发布
+{
+	$postdata=$_POST['postdata'];
+	AddPostUrlData($postdata,$logininid,$loginin);
+}
+elseif($melve=="PostUrlData")//远程发布
+{
+	$start=$_GET['start'];
+	$rnd=$_GET['rnd'];
+	PostUrlData($start,$rnd,$logininid,$loginin);
+}
+elseif($melve=="ChangemelveData")//更新缓存
+{
+	ChangemelveData($logininid,$loginin);
+}
+else
+{
+	printerror("ErrorUrl","history.go(-1)");
+}
+db_close();
+$Elves=null;
+?>

@@ -1,0 +1,12 @@
+#
+# robots.txt for ElvesCMS
+#
+
+User-agent: *
+
+Disallow: /d/
+Disallow: /core/class/
+Disallow: /core/config/
+Disallow: /core/data/
+Disallow: /core/melve/
+Disallow: /core/update/

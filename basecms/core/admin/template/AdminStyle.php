@@ -1,0 +1,255 @@
+<?php
+define('ElvesCMSAdmin','1');
+require("../../class/connect.php");
+require("../../class/db_sql.php");
+require("../../class/functions.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$editor=1;
+//验证用户
+$lur=is_login();
+$logininid=$lur['userid'];
+$loginin=$lur['username'];
+$loginrnd=$lur['rnd'];
+$loginlevel=$lur['groupid'];
+$loginadminstyleid=$lur['adminstyleid'];
+//验证权限
+CheckLevel($logininid,$loginin,$classid,"adminstyle");
+
+//更新样式缓存
+function UpAdminstyle(){
+	global $Elves,$dbtbpre;
+	$adminstyle=',';
+	$sql=$Elves->query("select path from {$dbtbpre}melveadminstyle");
+	while($r=$Elves->fetch($sql))
+	{
+		$adminstyle.=$r['path'].',';
+	}
+	$Elves->query("update {$dbtbpre}melvepublic set adminstyle='$adminstyle'");
+	GetConfig();
+}
+
+//增加后台样式
+function AddAdminstyle($add,$userid,$username){
+	global $Elves,$dbtbpre;
+	$path=RepPathStr($add['path']);
+	$path=(int)$path;
+	if(empty($path)||empty($add['stylename']))
+	{
+		printerror("EmptyAdminStyle","history.go(-1)");
+	}
+	//验证权限
+	CheckLevel($userid,$username,$classid,"adminstyle");
+	//目录是否存在
+	if(!file_exists("../adminstyle/".$path))
+	{
+		printerror("EmptyAdminStylePath","history.go(-1)");
+	}
+	$sql=$Elves->query("insert into {$dbtbpre}melveadminstyle(stylename,path,isdefault) values('$add[stylename]',$path,0);");
+	if($sql)
+	{
+		UpAdminstyle();
+		$styleid=$Elves->lastid();
+		//操作日志
+		insert_dolog("styleid=$styleid&stylename=$add[stylename]");
+		printerror("AddAdminStyleSuccess","AdminStyle.php");
+	}
+	else
+	{
+		printerror("DbError","history.go(-1)");
+	}
+}
+
+//修改后台样式
+function EditAdminStyle($add,$userid,$username){
+	global $Elves,$dbtbpre;
+	$styleid=(int)$add['styleid'];
+	$path=RepPathStr($add['path']);
+	$path=(int)$path;
+	if(!$styleid||empty($path)||empty($add['stylename']))
+	{
+		printerror("EmptyAdminStyle","history.go(-1)");
+	}
+	//验证权限
+	CheckLevel($userid,$username,$classid,"adminstyle");
+	//目录是否存在
+	if(!file_exists("../adminstyle/".$path))
+	{
+		printerror("EmptyAdminStylePath","history.go(-1)");
+	}
+	$sql=$Elves->query("update {$dbtbpre}melveadminstyle set stylename='$add[stylename]',path=$path where styleid=$styleid");
+	if($sql)
+	{
+		UpAdminstyle();
+		//操作日志
+		insert_dolog("styleid=$styleid&stylename=$add[stylename]");
+		printerror("EditAdminStyleSuccess","AdminStyle.php");
+	}
+	else
+	{
+		printerror("DbError","history.go(-1)");
+	}
+}
+
+//默认后台样式
+function DefAdminStyle($styleid,$userid,$username){
+	global $Elves,$dbtbpre;
+	$styleid=(int)$styleid;
+	if(!$styleid)
+	{
+		printerror("EmptyAdminStyleid","history.go(-1)");
+	}
+	//验证权限
+	CheckLevel($userid,$username,$classid,"adminstyle");
+	$r=$Elves->fetch1("select stylename,path from {$dbtbpre}melveadminstyle where styleid=$styleid");
+	$usql=$Elves->query("update {$dbtbpre}melveadminstyle set isdefault=0");
+	$sql=$Elves->query("update {$dbtbpre}melveadminstyle set isdefault=1 where styleid=$styleid");
+	$upsql=$Elves->query("update {$dbtbpre}melvepublic set defadminstyle='$r[path]' limit 1");
+	if($sql)
+	{
+		GetConfig();
+		//操作日志
+		insert_dolog("styleid=$styleid&stylename=$r[stylename]");
+		printerror("DefAdminStyleSuccess","AdminStyle.php");
+	}
+	else
+	{
+		printerror("DbError","history.go(-1)");
+	}
+}
+
+//删除后台样式
+function DelAdminStyle($styleid,$userid,$username){
+	global $Elves,$dbtbpre;
+	$styleid=(int)$styleid;
+	if(!$styleid)
+	{
+		printerror("EmptyAdminStyleid","history.go(-1)");
+	}
+	//验证权限
+	CheckLevel($userid,$username,$classid,"adminstyle");
+	$r=$Elves->fetch1("select stylename,path,isdefault from {$dbtbpre}melveadminstyle where styleid=$styleid");
+	if($r['isdefault'])
+	{
+		printerror("NotDelDefAdminStyle","history.go(-1)");
+	}
+	$sql=$Elves->query("delete from {$dbtbpre}melveadminstyle where styleid=$styleid");
+	if($sql)
+	{
+		UpAdminstyle();
+		//操作日志
+		insert_dolog("styleid=$styleid&stylename=$r[stylename]");
+		printerror("DelAdminStyleSuccess","AdminStyle.php");
+	}
+	else
+	{
+		printerror("DbError","history.go(-1)");
+	}
+}
+
+$melve=$_POST['melve'];
+if(empty($melve))
+{$melve=$_GET['melve'];}
+//增加后台样式
+if($melve=="AddAdminStyle")
+{
+	AddAdminstyle($_POST,$logininid,$loginin);
+}
+//修改后台样式
+elseif($melve=="EditAdminStyle")
+{
+	EditAdminStyle($_POST,$logininid,$loginin);
+}
+//默认后台样式
+elseif($melve=="DefAdminStyle")
+{
+	DefAdminStyle($_GET['styleid'],$logininid,$loginin);
+}
+//删除后台样式
+elseif($melve=="DelAdminStyle")
+{
+	DelAdminStyle($_GET['styleid'],$logininid,$loginin);
+}
+$sql=$Elves->query("select styleid,stylename,path,isdefault from {$dbtbpre}melveadminstyle order by styleid");
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<link href="../adminstyle/<?=$loginadminstyleid?>/adminstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" align="center" cellpadding="3" cellspacing="1">
+  <tr>
+    <td><p>位置：<a href="AdminStyle.php">管理后台样式</a></p>
+      </td>
+  </tr>
+</table>
+<form name="form1" method="post" action="AdminStyle.php">
+  <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+    <tr class="header">
+      <td height="25">增加后台样式: 
+        <input name=melve type=hidden id="melve" value=AddAdminStyle>
+        </td>
+    </tr>
+    <tr> 
+      <td height="25" bgcolor="#FFFFFF"> 样式名称: 
+        <input name="stylename" type="text" id="stylename">
+        样式目录:adminstyle/ 
+        <input name="path" type="text" id="path" size="6">
+        (请填写数字) 
+        <input type="submit" name="Submit" value="增加">
+        <input type="reset" name="Submit2" value="重置"></td>
+    </tr>
+  </table>
+</form>
+<table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+  <tr class="header"> 
+    <td width="7%"><div align="center">ID</div></td>
+    <td width="29%" height="25"><div align="center">样式名称</div></td>
+    <td width="30%"><div align="center">样式目录</div></td>
+    <td width="34%" height="25"><div align="center">操作</div></td>
+  </tr>
+  <?
+  while($r=$Elves->fetch($sql))
+  {
+  	$bgcolor="#FFFFFF";
+	$movejs=' onmouseout="this.style.backgroundColor=\'#ffffff\'" onmouseover="this.style.backgroundColor=\'#C3EFFF\'"';
+  	if($r[isdefault])
+	{
+		$bgcolor="#DBEAF5";
+		$movejs='';
+	}
+  ?>
+  <form name=form2 method=post action=AdminStyle.php>
+    <input type=hidden name=melve value=EditAdminStyle>
+    <input type=hidden name=styleid value=<?=$r[styleid]?>>
+    <tr bgcolor="<?=$bgcolor?>"<?=$movejs?>> 
+      <td><div align="center">
+          <?=$r[styleid]?>
+        </div></td>
+      <td height="25"> <div align="center"> 
+          <input name="stylename" type="text" id="stylename" value="<?=$r[stylename]?>">
+        </div></td>
+      <td><div align="center">adminstyle/ 
+          <input name="path" type="text" id="path" value="<?=$r[path]?>" size="6">
+        </div></td>
+      <td height="25"><div align="center">
+          <input type="button" name="Submit4" value="设为默认" onclick="self.location.href='AdminStyle.php?melve=DefAdminStyle&styleid=<?=$r[styleid]?>';"> 
+		  &nbsp;
+          <input type="submit" name="Submit3" value="修改">
+          &nbsp; 
+          <input type="button" name="Submit4" value="删除" onclick="self.location.href='AdminStyle.php?melve=DelAdminStyle&styleid=<?=$r[styleid]?>';">
+        </div></td>
+    </tr>
+  </form>
+  <?
+  }
+  db_close();
+  $Elves=null;
+  ?>
+</table>
+</body>
+</html>

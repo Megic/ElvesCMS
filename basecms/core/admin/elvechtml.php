@@ -1,0 +1,184 @@
+<?php
+define('ElvesCMSAdmin','1');
+require("../class/connect.php");
+require("../class/db_sql.php");
+require("../class/functions.php");
+require LoadLang("pub/fun.php");
+require("../class/t_functions.php");
+require("../data/dbcache/class.php");
+require("../data/dbcache/MemberLevel.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$melve=$_POST['melve'];
+if(empty($melve))
+{
+	$melve=$_GET['melve'];
+}
+//验证用户
+$lur=is_login();
+$logininid=$lur['userid'];
+$loginin=$lur['username'];
+$loginrnd=$lur['rnd'];
+$loginlevel=$lur['groupid'];
+$loginadminstyleid=$lur['adminstyleid'];
+$incftp=0;
+if($public_r['phpmode'])
+{
+	include("../class/ftp.php");
+	$incftp=1;
+}
+//防采集
+if($public_r['opennotcj'])
+{
+	@include("../data/dbcache/notcj.php");
+}
+require("../class/chtmlfun.php");
+if($melve=="RmelveHtml")//刷新内容页面
+{
+	$start=$_GET['start'];
+	$classid=$_GET['classid'];
+	$from=$_GET['from'];
+	$retype=$_GET['retype'];
+	$startday=$_GET['startday'];
+	$endday=$_GET['endday'];
+	$startid=$_GET['startid'];
+	$endid=$_GET['endid'];
+	$tbname=$_GET['tbname'];
+	$havehtml=$_GET['havehtml'];
+	RmelveHtml($start,$classid,$from,$retype,$startday,$endday,$startid,$endid,$tbname,$havehtml);
+}
+elseif($melve=="ReListHtml_all")//刷新所有列表
+{
+	$start=$_GET['start'];
+	$do=$_GET['do'];
+	$from=$_GET['from'];
+	ReListHtml_all($start,$do,$from);
+}
+elseif($melve=="ReZtListHtml_all")//刷新所有专题页面
+{
+	$start=$_GET['start'];
+	$do=$_GET['do'];
+	$from=$_GET['from'];
+	ReZtListHtml_all($start,$do,$from);
+}
+elseif($melve=="ReTtListHtml_all")//刷新所有标题分类页面
+{
+	$start=$_GET['start'];
+	$do=$_GET['do'];
+	$from=$_GET['from'];
+	ReTtListHtml_all($start,$do,$from);
+}
+elseif($melve=="ReAllNewsJs")//刷新所有信息js
+{
+	$start=$_GET['start'];
+	$do=$_GET['do'];
+	$from=$_GET['from'];
+	ReAllNewsJs($start,$do,$from);
+}
+elseif($melve=="ReIndex")//刷新首页
+{
+	ReIndex();
+}
+elseif($melve=="ReUserpageAll")//批量刷新自定义页面
+{
+	ReUserpageAll($_GET['start'],$_GET['from'],$logininid,$loginin);
+}
+elseif($melve=="ReUserlistAll")//批量刷新自定义信息列表
+{
+	$start=$_GET['start'];
+	$from=$_GET['from'];
+	ReUserlistAll($start,$from,$logininid,$loginin);
+}
+elseif($melve=="ReUserjsAll")//批量刷新自定义JS
+{
+	$start=$_GET['start'];
+	$from=$_GET['from'];
+	ReUserjsAll($start,$from,$logininid,$loginin);
+}
+elseif($melve=="ReHot_NewNews")//刷新最新信息与热门信息JS
+{
+	ReHot_NewNews();
+}
+elseif($melve=="ReSpAll")//批量刷新碎片文件
+{
+	ReSpAll($_GET['start'],$_GET['from'],$logininid,$loginin);
+}
+elseif($melve=='ReSingleInfo')//刷新单信息页面
+{
+	ReSingleInfo($logininid,$loginin);
+}
+elseif($melve=="ReZtHtml")//刷新专题
+{
+	$ztid=$_GET['ztid'];
+	$elve=$_GET['elve'];
+	ReZtHtml($ztid,$elve);
+}
+elseif($melve=="ReTtHtml")//刷新标题分类
+{
+	$typeid=$_GET['typeid'];
+	ReTtHtml($typeid);
+}
+elseif($melve=="ReSingleJs")//刷新单个栏目JS
+{
+	$classid=$_GET['classid'];
+	$doing=$_GET['doing'];
+	ReSingleJs($classid,$doing);
+}
+elseif($melve=="ReDtPage")//批量更新动态页面
+{
+	ReDtPage($logininid,$loginin);
+}
+elseif($melve=="GoReListHtmlMore")//初使化刷新多栏目
+{
+	$classid=$_POST['classid'];
+	$gore=$_POST['gore'];
+	$from=$_POST['from'];
+	$elve=$_POST['elve'];
+	GoReListHtmlMore($classid,$gore,$from,$elve);
+}
+elseif($melve=="GoReListHtmlMoreA")//初使化刷新多栏目(管理栏目)
+{
+	$classid=$_POST['reclassid'];
+	$gore=$_POST['gore'];
+	$from=$_POST['from'];
+	$elve=$_POST['elve'];
+	GoReListHtmlMore($classid,$gore,$from,$elve);
+}
+elseif($melve=="ReListHtmlMore")//刷新多栏目
+{
+	$start=$_GET['start'];
+	$classid=$_GET['classid'];
+	$from=$_GET['from'];
+	ReListHtmlMore($start,$classid,$from);
+}
+elseif($melve=="ReListZtHtmlMore")//刷新多专题
+{
+	$start=$_GET['start'];
+	$classid=$_GET['classid'];
+	$from=$_GET['from'];
+	$elve=$_GET['elve'];
+	ReListZtHtmlMore($start,$classid,$from,$elve);
+}
+elseif($melve=="ReListTtHtmlMore")//刷新多标题分类
+{
+	$start=$_GET['start'];
+	$classid=$_GET['classid'];
+	$from=$_GET['from'];
+	ReListTtHtmlMore($start,$classid,$from);
+}
+elseif($melve=="ReClassPath")//恢复栏目目录
+{
+	$start=$_GET['start'];
+	ReClassPath($start);
+}
+elseif($melve=='UpdateClassInfosAll')//更新栏目信息数
+{
+	UpdateClassInfosAll($_GET);
+}
+else
+{
+	printerror("ErrorUrl","history.go(-1)");
+}
+db_close();
+$Elves=null;
+?>

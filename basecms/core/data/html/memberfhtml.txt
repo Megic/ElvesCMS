@@ -1,0 +1,34 @@
+[!--text--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--melve.var--]]))?>" size="[!--fsize.w--]">
+[!--text--]
+[!--password--]
+<input name="[!--melve.var--]" type="password" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--melve.var--]]))?>" size="[!--fsize.w--]">
+[!--password--]
+[!--select--]
+<select name="[!--melve.var--]" id="[!--melve.var--]">
+[!--melve.select.var--]
+</select>
+[!--select--]
+[!--radio--]
+<select name="[!--melve.var--]" id="[!--melve.var--]">
+[!--melve.radio.var--]
+</select>
+[!--radio--]
+[!--textarea--]
+<textarea name="[!--melve.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--melve.var--]"><?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--melve.var--]]))?></textarea>
+[!--textarea--]
+[!--img--]
+<input type="file" name="[!--melve.var--]file" size="[!--fsize.w--]">
+[!--img--]
+[!--flash--]
+<input type="file" name="[!--melve.var--]file" size="[!--fsize.w--]">
+[!--flash--]
+[!--file--]
+<input type="file" name="[!--melve.var--]file" size="[!--fsize.w--]">
+[!--file--]
+[!--date--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--melve.var--]]))?>" size="[!--fsize.w--]" onclick="setday(this);">
+[!--date--]
+[!--color--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($addr[[!--melve.var--]]))?>" size="[!--fsize.w--]" onclick="FieldChangeColor(this);">
+[!--color--]

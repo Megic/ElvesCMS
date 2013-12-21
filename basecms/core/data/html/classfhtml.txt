@@ -1,0 +1,40 @@
+[!--text--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars($addr[[!--melve.var--]])?>" size="[!--fsize.w--]">
+[!--text--]
+[!--password--]
+<input name="[!--melve.var--]" type="password" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars($addr[[!--melve.var--]])?>" size="[!--fsize.w--]">
+[!--password--]
+[!--select--]
+<select name="[!--melve.var--]" id="[!--melve.var--]">
+[!--melve.select.var--]
+</select>
+[!--select--]
+[!--radio--]
+<select name="[!--melve.var--]" id="[!--melve.var--]">
+[!--melve.radio.var--]
+</select>
+[!--radio--]
+[!--textarea--]
+<textarea name="[!--melve.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--melve.var--]"><?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars($addr[[!--melve.var--]])?></textarea>
+[!--textarea--]
+[!--img--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars($addr[[!--melve.var--]])?>" size="[!--fsize.w--]">
+<a onclick="window.open('[!--melve.path--]elveeditor/FileMain.php?modtype=[!--melve.modtype--]&type=1&classid=&filepass=<?=$filepass?>&sinfo=1&doing=2&field=[!--melve.var--]','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="[!--melve.path--]../data/images/changeimg.gif" border="0" align="absbottom"></a> 
+[!--img--]
+[!--flash--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars($addr[[!--melve.var--]])?>" size="[!--fsize.w--]">
+<a onclick="window.open('[!--melve.path--]elveeditor/FileMain.php?modtype=[!--melve.modtype--]&type=2&classid=&filepass=<?=$filepass?>&sinfo=1&doing=2&field=[!--melve.var--]','','width=700,height=550,scrollbars=yes');" title="选择已上传的FLASH"><img src="[!--melve.path--]../data/images/changeflash.gif" border="0" align="absbottom"></a> 
+[!--flash--]
+[!--file--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars($addr[[!--melve.var--]])?>" size="[!--fsize.w--]">
+<a onclick="window.open('[!--melve.path--]elveeditor/FileMain.php?modtype=[!--melve.modtype--]&type=0&classid=&filepass=<?=$filepass?>&sinfo=1&doing=2&field=[!--melve.var--]','','width=700,height=550,scrollbars=yes');" title="选择已上传的文件"><img src="[!--melve.path--]../data/images/changefile.gif" border="0" align="absbottom"></a>
+[!--file--]
+[!--date--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars($addr[[!--melve.var--]])?>" size="[!--fsize.w--]" onclick="setday(this);">
+[!--date--]
+[!--color--]
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars($addr[[!--melve.var--]])?>" size="[!--fsize.w--]" onclick="FieldChangeColor(this);">
+[!--color--]
+[!--editor--]
+<?=elve_ShowEditorVar("[!--melve.var--]",$elvefirstpost==1?"[!--melve.def.val--]":$addr[[!--melve.var--]],"[!--editor.type--]","[!--editor.basepath--]","[!--fsize.h--]","[!--fsize.w--]")?>
+[!--editor--]

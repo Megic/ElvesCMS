@@ -1,0 +1,82 @@
+<?php
+define('ElvesCMSAdmin','1');
+require("../class/connect.php");
+require("../class/db_sql.php");
+require("../class/functions.php");
+require LoadLang("pub/fun.php");
+require("../data/dbcache/class.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$melve=$_POST['melve'];
+if(empty($melve))
+{
+	$melve=$_GET['melve'];
+}
+//验证用户
+$lur=is_login();
+$logininid=$lur['userid'];
+$loginin=$lur['username'];
+$loginrnd=$lur['rnd'];
+$loginlevel=$lur['groupid'];
+$loginadminstyleid=$lur['adminstyleid'];
+require("../class/hplfun.php");
+if($melve=="DelPl_all")//删除评论
+{
+	$plid=$_POST['plid'];
+	$id=$_POST['id'];
+	$bclassid=$_POST['bclassid'];
+	$classid=$_POST['classid'];
+	DelPl_all($plid,$id,$bclassid,$classid,$logininid,$loginin);
+}
+elseif($melve=="CheckPl_all")//审核评论
+{
+	$plid=$_POST['plid'];
+	$id=$_POST['id'];
+	$bclassid=$_POST['bclassid'];
+	$classid=$_POST['classid'];
+	CheckPl_all($plid,$id,$bclassid,$classid,$logininid,$loginin);
+}
+elseif($melve=='DoGoodPl_all')//推荐评论
+{
+	$plid=$_POST['plid'];
+	$id=$_POST['id'];
+	$bclassid=$_POST['bclassid'];
+	$classid=$_POST['classid'];
+	$isgood=$_POST['isgood'];
+	DoGoodPl_all($plid,$id,$bclassid,$classid,$isgood,$logininid,$loginin);
+}
+elseif($melve=='AddPlF')//增加评论字段
+{
+	AddPlF($_POST,$logininid,$loginin);
+}
+elseif($melve=='EditPlF')//修改评论字段
+{
+	EditPlF($_POST,$logininid,$loginin);
+}
+elseif($melve=='DelPlF')//删除评论字段
+{
+	DelPlF($_GET,$logininid,$loginin);
+}
+elseif($melve=='AddPlDataTable')//增加评论分表
+{
+	AddPlDataTable($_POST,$logininid,$loginin);
+}
+elseif($melve=='DefPlDataTable')//默认评论分表
+{
+	DefPlDataTable($_GET,$logininid,$loginin);
+}
+elseif($melve=='DelPlDataTable')//删除评论分表
+{
+	DelPlDataTable($_GET,$logininid,$loginin);
+}
+elseif($melve=='SetPl')//评论参数设置
+{
+	SetPl($_POST,$logininid,$loginin);
+}
+else
+{
+	printerror("ErrorUrl","history.go(-1)");
+}
+db_close();
+$Elves=null;
+?>

@@ -1,0 +1,208 @@
+<?php
+define('ElvesCMSAdmin','1');
+require("../class/connect.php");
+require("../class/db_sql.php");
+require("../class/functions.php");
+require LoadLang("pub/fun.php");
+require("../class/delpath.php");
+require("../class/copypath.php");
+require("../class/t_functions.php");
+require("../data/dbcache/class.php");
+require("../data/dbcache/MemberLevel.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$melve=$_POST['melve'];
+if(empty($melve))
+{
+	$melve=$_GET['melve'];
+}
+//验证用户
+$lur=is_login();
+$logininid=$lur['userid'];
+$loginin=$lur['username'];
+$loginrnd=$lur['rnd'];
+$loginlevel=$lur['groupid'];
+$loginadminstyleid=$lur['adminstyleid'];
+$incftp=0;
+if($public_r['phpmode'])
+{
+	include("../class/ftp.php");
+	$incftp=1;
+}
+//防采集
+if($public_r['opennotcj'])
+{
+	@include("../data/dbcache/notcj.php");
+}
+//会员
+require("../member/class/user.php");
+require("../class/hinfofun.php");
+if($melve=="AddNews")//增加信息
+{
+	$navtheid=(int)$_POST['filepass'];
+	AddNews($_POST,$logininid,$loginin);
+}
+elseif($melve=="EditNews")//修改信息
+{
+	$navtheid=(int)$_POST['id'];
+	EditNews($_POST,$logininid,$loginin);
+}
+elseif($melve=="EditInfoSimple")//修改信息(快速)
+{
+	$navtheid=(int)$_POST['id'];
+	EditInfoSimple($_POST,$logininid,$loginin);
+}
+elseif($melve=="DelNews")//删除信息
+{
+	$id=$_GET['id'];
+	$classid=$_GET['classid'];
+	$bclassid=$_GET['bclassid'];
+	DelNews($id,$classid,$logininid,$loginin);
+}
+elseif($melve=="DelNews_all")//批量删除信息
+{
+	$id=$_POST['id'];
+	$classid=$_POST['classid'];
+	$bclassid=$_POST['bclassid'];
+	$elve=$_POST['elvecheck']?2:0;
+	DelNews_all($id,$classid,$logininid,$loginin,$elve);
+}
+elseif($melve=="EditMoreInfoTime")//批量修改信息时间
+{
+	EditMoreInfoTime($_POST,$logininid,$loginin);
+}
+elseif($melve=="DelInfoDoc_all")//删除归档
+{
+	$id=$_POST['id'];
+	$classid=$_POST['classid'];
+	$bclassid=$_POST['bclassid'];
+	DelNews_all($id,$classid,$logininid,$loginin,1);
+}
+elseif($melve=='AddInfoToReHtml')//刷新页面
+{
+	AddInfoToReHtml($_GET['classid'],$_GET['dore']);
+}
+elseif($melve=="TopNews_all")//信息置顶
+{
+	$bclassid=$_POST['bclassid'];
+	$classid=$_POST['classid'];
+	$id=$_POST['id'];
+	$istop=$_POST['istop'];
+	TopNews_all($classid,$id,$istop,$logininid,$loginin);
+}
+elseif($melve=="CheckNews_all")//审核信息
+{
+	$bclassid=$_POST['bclassid'];
+	$classid=$_POST['classid'];
+	$id=$_POST['id'];
+	CheckNews_all($classid,$id,$logininid,$loginin);
+}
+elseif($melve=="NoCheckNews_all")//取消审核信息
+{
+	$bclassid=$_POST['bclassid'];
+	$classid=$_POST['classid'];
+	$id=$_POST['id'];
+	NoCheckNews_all($classid,$id,$logininid,$loginin);
+}
+elseif($melve=="Movmelve_all")//移动信息
+{
+	$bclassid=$_POST['bclassid'];
+	$classid=$_POST['classid'];
+	$id=$_POST['id'];
+	$to_classid=$_POST['to_classid'];
+	Movmelve_all($classid,$id,$to_classid,$logininid,$loginin);
+}
+elseif($melve=="CopyNews_all")//复制信息
+{
+	$bclassid=$_POST['bclassid'];
+	$classid=$_POST['classid'];
+	$id=$_POST['id'];
+	$to_classid=$_POST['to_classid'];
+	CopyNews_all($classid,$id,$to_classid,$logininid,$loginin);
+}
+elseif($melve=="MoveClassNews")//批量移动信息
+{
+	$add=$_POST['add'];
+	MoveClassNews($add,$logininid,$loginin);
+}
+elseif($melve=="GoodInfo_all")//批量推荐/头条信息
+{
+	$classid=$_POST['classid'];
+	$id=$_POST['id'];
+	$doing=$_POST['doing'];
+	$isgood=empty($doing)?$_POST['isgood']:$_POST['firsttitle'];
+	GoodInfo_all($classid,$id,$isgood,$doing,$logininid,$loginin);
+}
+elseif($melve=="SetAllCheckInfo")//本栏目信息全部审核
+{
+	$classid=$_GET['classid'];
+	$bclassid=$_GET['bclassid'];
+	SetAllCheckInfo($bclassid,$classid,$logininid,$loginin);
+}
+elseif($melve=="DoWfInfo")//签发信息
+{
+	DoWfInfo($_POST,$logininid,$loginin);
+}
+elseif($melve=="DelInfoData")//删除信息页面
+{
+	$start=$_GET['start'];
+	$classid=$_GET['classid'];
+	$from=$_GET['from'];
+	$retype=$_GET['retype'];
+	$startday=$_GET['startday'];
+	$endday=$_GET['endday'];
+	$startid=$_GET['startid'];
+	$endid=$_GET['endid'];
+	$tbname=$_GET['tbname'];
+	DelInfoData($start,$classid,$from,$retype,$startday,$endday,$startid,$endid,$tbname,$_GET,$logininid,$loginin);
+}
+elseif($melve=="InfoToDoc")//归档信息
+{
+	if($_GET['elvedoc']==1)//栏目
+	{
+		InfoToDoc_class($_GET,$logininid,$loginin);
+	}
+	elseif($_GET['elvedoc']==2)//条件
+	{
+		InfoToDoc($_GET,$logininid,$loginin);
+	}
+	else//信息
+	{
+		InfoToDoc_info($_POST,$logininid,$loginin);
+	}
+}
+elseif($melve=="DoInfoAndSendNotice")//处理信息并通知
+{
+	$doing=(int)$_POST['doing'];
+	$adddatar=$_POST;
+	if($doing==1)//删除
+	{
+		$melve='DelNews';
+		DelNews($adddatar['id'],$adddatar['classid'],$logininid,$loginin);
+	}
+	elseif($doing==2)//审核通过
+	{
+		$melve='CheckNews_all';
+		$doid[0]=$adddatar['id'];
+		CheckNews_all($adddatar['classid'],$doid,$logininid,$loginin);
+	}
+	elseif($doing==3)//取消审核
+	{
+		$melve='NoCheckNews_all';
+		$doid[0]=$adddatar['id'];
+		NoCheckNews_all($adddatar['classid'],$doid,$logininid,$loginin);
+	}
+	elseif($doing==4)//转移
+	{
+		$melve='Movmelve_all';
+		$doid[0]=$adddatar['id'];
+		Movmelve_all($adddatar['classid'],$doid,$adddatar['to_classid'],$logininid,$loginin);
+	}
+}
+else
+{
+	printerror("ErrorUrl","history.go(-1)");
+}
+db_close();
+$Elves=null;
+?>

@@ -1,0 +1,71 @@
+<?php
+define('ElvesCMSAdmin','1');
+require("../class/connect.php");
+require("../class/db_sql.php");
+require("../class/functions.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$melve=$_POST['melve'];
+if(empty($melve))
+{
+	$melve=$_GET['melve'];
+}
+//验证用户
+$lur=is_login();
+$logininid=$lur['userid'];
+$loginin=$lur['username'];
+$loginrnd=$lur['rnd'];
+$loginlevel=$lur['groupid'];
+$loginadminstyleid=$lur['adminstyleid'];
+require("../member/class/user.php");
+require("../class/memberfun.php");
+if($melve=='AddMemberF')//增加会员字段
+{
+	AddMemberF($_POST,$logininid,$loginin);
+}
+elseif($melve=='EditMemberF')//修改会员字段
+{
+	EditMemberF($_POST,$logininid,$loginin);
+}
+elseif($melve=='DelMemberF')//删除会员字段
+{
+	DelMemberF($_GET,$logininid,$loginin);
+}
+elseif($melve=='EditMemberFOrder')//修改会员字段顺序
+{
+	EditMemberFOrder($_POST['fid'],$_POST['myorder'],$logininid,$loginin);
+}
+elseif($melve=='AddMemberForm')//增加会员表单
+{
+	AddMemberForm($_POST,$logininid,$loginin);
+}
+elseif($melve=='EditMemberForm')//修改会员表单
+{
+	EditMemberForm($_POST,$logininid,$loginin);
+}
+elseif($melve=='DelMemberForm')//删除会员表单
+{
+	DelMemberForm($_GET,$logininid,$loginin);
+}
+elseif($melve=="AddMemberGroup")//增加会员组
+{
+	$add=$_POST;
+	AddMemberGroup($add,$logininid,$loginin);
+}
+elseif($melve=="EditMemberGroup")//修改会员组
+{
+	$add=$_POST;
+	EditMemberGroup($add,$logininid,$loginin);
+}
+elseif($melve=="DelMemberGroup")//删除会员组
+{
+	$groupid=$_GET['groupid'];
+	DelMemberGroup($groupid,$logininid,$loginin);
+}
+else
+{
+	printerror("ErrorUrl","history.go(-1)");
+}
+db_close();
+$Elves=null;
+?>

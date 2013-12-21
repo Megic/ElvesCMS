@@ -1,0 +1,67 @@
+<?php
+require("../class/connect.php");
+require("../class/db_sql.php");
+require("../data/dbcache/class.php");
+require("../member/class/user.php");
+require("../data/dbcache/MemberLevel.php");
+require LoadLang("pub/fun.php");
+$link=db_connect();
+$Elves=new mysqlquery();
+$melve=$_POST['melve'];
+if(empty($melve))
+{
+	$melve=$_GET['melve'];
+}
+//导入文件
+eCheckCloseMods('shop');//关闭模块
+include('class/ShopSysFun.php');
+
+if($melve=="ClearBuycar")//清空购物车
+{
+	ClearBuycar();
+}
+elseif($melve=="AddBuycar")//加入购物车
+{
+	$classid=$_GET['classid'];
+	$id=$_GET['id'];
+	$pn=$_GET['pn'];
+	AddBuycar($classid,$id,$pn,$_GET);
+}
+elseif($melve=="EditBuycar")//修改购物车
+{
+	EditBuycar($_POST);
+}
+elseif($melve=="AddDd")//增加定单
+{
+	AddDd($_POST);
+}
+elseif($melve=="ShopDdToPay")//未付款的继续支付
+{
+	$ddid=$_GET['ddid'];
+	ShopDdToPay($ddid);
+}
+elseif($melve=='DelDd')//取消订单
+{
+	ShopSys_qDelDd($_GET);
+}
+elseif($melve=="AddAddress")//新增地址
+{
+	ShopSys_AddAddress($_POST);
+}
+elseif($melve=="EditAddress")//修改地址
+{
+	ShopSys_EditAddress($_POST);
+}
+elseif($melve=="DelAddress")//删除地址
+{
+	ShopSys_DelAddress($_GET);
+}
+elseif($melve=="DefAddress")//默认地址
+{
+	ShopSys_DefAddress($_GET);
+}
+else
+{printerror("ErrorUrl","history.go(-1)",1);}
+db_close();
+$Elves=null;
+?>
