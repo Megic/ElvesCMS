@@ -106,6 +106,15 @@ function ShowFieldFormSet(obj,val){
 		defvaldiv.style.display="none";
 		fmorevaluediv.style.display="none";
 	}
+    else if(val=='ueditor')
+  {
+    fsizediv.style.display="none";
+    fwidthdiv.style.display="none";
+    flinkfielddiv.style.display="none";
+    feditordiv.style.display="none";
+    defvaldiv.style.display="none";
+    fmorevaluediv.style.display="none";
+  }
 	else if(val=='textarea'||val=='ubbeditor')
 	{
 		fsizediv.style.display="none";
@@ -314,6 +323,7 @@ function ShowFieldFormSet(obj,val){
           <option value="checkbox"<?=$formcheckbox?>>复选框(checkbox)</option>
           <option value="textarea"<?=$formtextarea?>>多行文本框(textarea)</option>
           <option value="editor"<?=$formeditor?>>编辑器(editor)</option>
+           <option value="ueditor"<?=$formueditor?>>百度编辑器(ueditor)</option>
           <option value="img"<?=$formimg?>>图片(img)</option>
           <option value="flash"<?=$formflash?>>FLASH文件(flash)</option>
           <option value="file"<?=$formfile?>>文件(file)</option>

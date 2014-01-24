@@ -18,8 +18,8 @@
 <textarea name="[!--melve.var--]" cols="[!--fsize.w--]" rows="[!--fsize.h--]" id="[!--melve.var--]"><?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--melve.var--]]))?></textarea>
 [!--textarea--]
 [!--img--]
-<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--melve.var--]]))?>" size="[!--fsize.w--]">
-<a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=[!--melve.var--]','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]"   value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--melve.var--]]))?>" size="[!--fsize.w--]">
+<a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=[!--melve.var--]','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片" class="showPIC"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 [!--img--]
 [!--flash--]
 <input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--melve.var--]]))?>" size="[!--fsize.w--]">
@@ -571,3 +571,6 @@ function domvadd_[!--melve.var--]()
   </tr>
 </table>
 [!--morevaluefield--]
+[!--ueditor--]
+<?php $field = '[!--melve.var--]'; include(elve_PATH.'/core/data/elveeditor/ueditor/php/editor.php'); ?>
+[!--ueditor--]

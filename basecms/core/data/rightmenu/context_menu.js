@@ -1,5 +1,5 @@
 var MenuWidth = 120;
-var ItemHeight = 17;
+var ItemHeight = 18;
 var ItemNumber = 0;
 
 ContextMenu.intializeContextMenu=function()
@@ -10,7 +10,7 @@ ContextMenu.intializeContextMenu=function()
 	document.body.attachEvent("onmousedown",function(){WebFX_PopUpcss.style.display="none"})
 	WebFX_PopUpcss.onfocus  = function(){WebFX_PopUpcss.style.display="inline"};
 	WebFX_PopUpcss.onblur  = function(){WebFX_PopUpcss.style.display="none"};
-	self.attachEvent("onblur",function(){WebFX_PopUpcss.style.display="none"})
+	// self.attachEvent("onblur",function(){WebFX_PopUpcss.style.display="none"})
 }
 
 

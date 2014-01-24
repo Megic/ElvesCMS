@@ -333,7 +333,7 @@ $phpmyself=urlencode(eReturnSelfPage(1));
 //返回头条和推荐级别名称
 $ftnr=ReturnFirsttitleNameList($r['firsttitle'],$r['isgood']);
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
 <head>
 <title><?=$word?></title>
@@ -342,9 +342,7 @@ $ftnr=ReturnFirsttitleNameList($r['firsttitle'],$r['isgood']);
 <link id="luna-tab-style-sheet" type="text/css" rel="stylesheet" href="adminstyle/<?=$loginadminstyleid?>/tab.winclassic.css" disabled="disabled" /> 
 <!-- the id is not needed. It is used here to be able to change css file at runtime -->
 <style type="text/css"> 
-   .dynamic-tab-pane-control .tab-page { 
-          width:                100%;
- } 
+
   .dynamic-tab-pane-control .tab-page .dynamic-tab-pane-control .tab-page { 
          height:                150px; 
  } 
@@ -368,6 +366,20 @@ $ftnr=ReturnFirsttitleNameList($r['firsttitle'],$r['isgood']);
          background: transparent; 
  } 
   </style>
+
+  <script src="../data/js/jquery-1.10.2.min.js"></script>
+  <script>
+$(function(){//By Megic
+  $("a.showPIC").hover(function(){//图片预览
+    $(this).css('position','relative');
+    $(this).css('z-index','9999');
+    var val=$(this).prev().val();
+    $(this).append("<img style='width:250px;position:absolute; left:50px;top:-50px' class='pic' src='"+val+"' />");
+  },function(){
+    $(this).find('.pic').remove();
+  });
+})
+ </script>
  <script type="text/javascript" src="../data/images/tabpane.js"></script> <script type="text/javascript"> 
   function setLinkSrc( sStyle ) { 
          document.getElementById( "luna-tab-style-sheet" ).disabled = sStyle != "luna"; 
@@ -420,7 +432,7 @@ function SpOpenChFile(type,field){
 	window.open('elveeditor/FileMain.php?classid=<?=$classid?>&infoid=<?=$id?><?=$addelvecheck?>&filepass=<?=$filepass?>&type='+type+'&sinfo=1&tranfrom=2&field='+field,'','width=700,height=550,scrollbars=yes');
 }
 </script>
-<script src="elveeditor/fieldfile/setday.js"></script>
+
 <script src="../data/html/postinfo.js"></script>
 <script>
 function bs(){
@@ -464,6 +476,7 @@ function FieldChangeColor(obj){
           <option value="5">刷新父栏目与首页</option>
           <option value="6" selected>刷新当前栏目、父栏目与首页</option>
         </select> <input type="button" name="Submit12" value="提交" onclick="self.location.href='elveinfo.php?melve=AddInfoToReHtml<?=$addelvecheck?>&classid=<?=$classid?>&dore='+document.searchinfo.dore.value;"> 
+        <a href="#"onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=titlepic','','width=700,height=550,scrollbars=yes');" >[管理上传文件]</a>
       </td>
       <td width="58%"><div align="right">[<font color="#ffffff"><a href=../../ target=_blank>预览首页</a></font>] 
           [<font color="#ffffff"><a href="<?=$classurl?>" target=_blank>预览栏目</a></font>] 

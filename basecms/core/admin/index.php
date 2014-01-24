@@ -81,7 +81,7 @@ function CheckLogin(obj){
   
   h1{font-size: 26px;font-family: '微软雅黑';color: #fcff00;}
   h1 em{font-size: 14px;padding: 0px;color: #fff;}
-  .ctable{background-color: #3399ff;}
+  .ctable{background-color: #6699cc;}
     .ctable td{color: #fff;font-size: 14px;padding: 5px;}
     .ctable td input,.ctable td select{border: 1px solid #fff;line-height: 25px;height: 25px;}
     button{height: 40px;padding-left: 20px;padding-right: 20px;}
@@ -102,7 +102,7 @@ function CheckLogin(obj){
       <td colspan="3"></td>
     </tr>
     <tr> 
-      <td width="241" valign="top" >
+      <td width="280" valign="top" >
        <h1>管理系统  <em>后台登录</em> </h1> 
       </td>
       <td width="157" rowspan="2" valign="top" > 

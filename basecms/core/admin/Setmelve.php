@@ -448,9 +448,7 @@ $Elves=null;
 <link id="luna-tab-style-sheet" type="text/css" rel="stylesheet" href="adminstyle/<?=$loginadminstyleid?>/tab.winclassic.css" disabled="disabled" /> 
 <!-- the id is not needed. It is used here to be able to change css file at runtime -->
 <style type="text/css"> 
-   .dynamic-tab-pane-control .tab-page { 
-          width:                100%;
- } 
+
   .dynamic-tab-pane-control .tab-page .dynamic-tab-pane-control .tab-page { 
          height:                150px; 
  } 

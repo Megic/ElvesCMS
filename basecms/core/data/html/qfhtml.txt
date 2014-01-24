@@ -285,3 +285,6 @@ function domvadd_[!--melve.var--]()
   </tr>
 </table>
 [!--morevaluefield--]
+[!--ueditor--]
+<?php $field = '[!--melve.var--]'; include(elve_PATH.'/core/data/elveeditor/ueditor/php/editor.php'); ?>
+[!--ueditor--]
