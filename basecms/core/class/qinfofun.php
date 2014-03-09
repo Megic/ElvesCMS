@@ -899,6 +899,7 @@ function DodoInfo($add,$elve=0){
 		//清除验证码
 		elveEmptyShowKey($keyvname);
 		esetcookie("qeditinfo","",0);
+		MDoFFun($mid,$add,$isadd,1);//处理函数
 		//生成页面
 		if($checked&&!$cr['showdt'])
 		{
@@ -1022,6 +1023,7 @@ function DodoInfo($add,$elve=0){
 			}
 		}
 		esetcookie("qeditinfo","",0);
+		MDoFFun($mid,$add,$isadd,1);//处理函数
 		//生成页面
 		if($infor['checked']&&!$cr['showdt'])
 		{

@@ -2169,7 +2169,7 @@ function AddM($add,$cname,$cchange,$schange,$center,$cqenter,$menter,$listand,$l
 	$usemod=(int)$add['usemod'];
 	$myorder=(int)$add['myorder'];
 	$add[printtempid]=(int)$add[printtempid];
-	$sql=$Elves->query("insert into {$dbtbpre}melvemod(mname,mtemp,mzs,cj,enter,tempvar,sonclass,searchvar,tid,tbname,qenter,mustqenterf,qmtemp,listandf,setandf,listtempvar,qmname,canaddf,caneditf,definfovoteid,showmod,usemod,myorder,orderf,isdefault,listfile,printtempid) values('$add[mname]','".eaddslashes2($add[mtemp])."','$add[mzs]','$cj','$enter','$tempvar','','$searchvar',$tid,'$tbname','$qenter','$mustqenterf','".eaddslashes2($add[qmtemp])."','".addslashes($listandf)."','$setandf','$listtempvar','$add[qmname]','$canaddf','$caneditf',$add[definfovoteid],'$showmod','$usemod','$myorder','$orderf',0,'$listfile','$add[printtempid]');");
+	$sql=$Elves->query("insert into {$dbtbpre}melvemod(mname,mtemp,mzs,cj,enter,tempvar,sonclass,searchvar,tid,tbname,qenter,mustqenterf,qmtemp,listandf,setandf,listtempvar,qmname,canaddf,caneditf,definfovoteid,showmod,usemod,myorder,orderf,isdefault,listfile,printtempid,madddofun,meditdofun,mqadddofun,mqeditdofun) values('$add[mname]','".eaddslashes2($add[mtemp])."','$add[mzs]','$cj','$enter','$tempvar','','$searchvar',$tid,'$tbname','$qenter','$mustqenterf','".eaddslashes2($add[qmtemp])."','".addslashes($listandf)."','$setandf','$listtempvar','$add[qmname]','$canaddf','$caneditf',$add[definfovoteid],'$showmod','$usemod','$myorder','$orderf',0,'$listfile','$add[printtempid]','$add[madddofun]','$add[meditdofun]','$add[mqadddofun]','$add[mqeditdofun]');");
 	$mid=$Elves->lastid();
 	UpdateTbDefMod($tid,$tbname,$mid);
 	//更新表单
@@ -2238,7 +2238,7 @@ function EditM($add,$cname,$cchange,$schange,$center,$cqenter,$menter,$listand,$
 	$usemod=(int)$add['usemod'];
 	$myorder=(int)$add['myorder'];
 	$add[printtempid]=(int)$add[printtempid];
-	$sql=$Elves->query("update {$dbtbpre}melvemod set mname='$add[mname]',mtemp='".eaddslashes2($add[mtemp])."',mzs='$add[mzs]',cj='$cj',enter='$enter',tempvar='$tempvar',searchvar='$searchvar',qenter='$qenter',mustqenterf='$mustqenterf',qmtemp='".eaddslashes2($add[qmtemp])."',listandf='".addslashes($listandf)."',setandf=$setandf,listtempvar='$listtempvar',qmname='$add[qmname]',canaddf='$canaddf',caneditf='$caneditf',definfovoteid=$add[definfovoteid],showmod='$showmod',usemod='$usemod',myorder='$myorder',orderf='$orderf',listfile='$listfile',printtempid='$add[printtempid]' where mid='$add[mid]'");
+	$sql=$Elves->query("update {$dbtbpre}melvemod set mname='$add[mname]',mtemp='".eaddslashes2($add[mtemp])."',mzs='$add[mzs]',cj='$cj',enter='$enter',tempvar='$tempvar',searchvar='$searchvar',qenter='$qenter',mustqenterf='$mustqenterf',qmtemp='".eaddslashes2($add[qmtemp])."',listandf='".addslashes($listandf)."',setandf=$setandf,listtempvar='$listtempvar',qmname='$add[qmname]',canaddf='$canaddf',caneditf='$caneditf',definfovoteid=$add[definfovoteid],showmod='$showmod',usemod='$usemod',myorder='$myorder',orderf='$orderf',listfile='$listfile',printtempid='$add[printtempid]',madddofun='$add[madddofun]',meditdofun='$add[meditdofun]',mqadddofun='$add[mqadddofun]',mqeditdofun='$add[mqeditdofun]' where mid='$add[mid]'");
 	//更新表单
 	ChangeMForm($add[mid],$tid,$add[mtemp]);
 	ChangeQmForm($add[mid],$tid,$add[qmtemp]);

@@ -291,6 +291,8 @@ function AddNews($add,$userid,$username){
 	{
 		eInsertTags($add[infotags],$add['classid'],$id,$newstime);
 	}
+	
+	MDoFFun($class_r[$add[classid]][modid],$add);//执行函数
 	//增加信息是否生成文件
 	if($ccr['addreinfo']&&$add['checked'])
 	{
@@ -534,6 +536,7 @@ function EditNews($add,$userid,$username){
 			AddClassInfos($add['classid'],'','-1');
 		}
 	}
+		MDoFFun($class_r[$add[classid]][modid],$add,0);
 	//生成文件
 	if($ccr['addreinfo']&&$newchecked)
 	{
@@ -722,6 +725,7 @@ function EditInfoSimple($add,$userid,$username){
 			AddClassInfos($add['classid'],'','-1');
 		}
 	}
+		MDoFFun($class_r[$add[classid]][modid],$add,0);
 	//生成文件
 	if($ccr['addreinfo']&&$newchecked)
 	{

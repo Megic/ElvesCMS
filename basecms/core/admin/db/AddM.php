@@ -412,6 +412,29 @@ function DoCheckAll(form,chf)
       <td height="25" valign="top">注释</td>
       <td height="25"><textarea name="add[mzs]" cols="75" rows="10" id="textarea" style="WIDTH: 100%"><?=stripSlashes($r[mzs])?></textarea></td>
     </tr>
+    <tr> 
+      <td height="25" bgcolor="#FFFFFF">后台增加信息处理函数</td>
+      <td height="25" bgcolor="#FFFFFF"><input name="add[madddofun]" type="text" id="madddofun" value="<?=$r[madddofun]?>">
+        <font color="#666666">(一般不设置，格式“函数名##参数”参数可不设置)</font></td>
+    </tr>
+    <tr> 
+      <td height="25" bgcolor="#FFFFFF">后台修改信息处理函数</td>
+      <td height="25" bgcolor="#FFFFFF"><input name="add[meditdofun]" type="text" id="meditdofun" value="<?=$r[meditdofun]?>">
+        <font color="#666666">(一般不设置，格式“函数名##参数”参数可不设置)</font></td>
+    </tr>
+    <tr> 
+      <td height="25" bgcolor="#FFFFFF">前台增加信息处理函数</td>
+      <td height="25" bgcolor="#FFFFFF"><input name="add[mqadddofun]" type="text" id="mqadddofun" value="<?=$r[mqadddofun]?>">
+        <font color="#666666">(一般不设置，格式“函数名##参数”参数可不设置)</font></td>
+    </tr>
+    <tr> 
+      <td height="25" bgcolor="#FFFFFF">前台修改信息处理函数</td>
+      <td height="25" bgcolor="#FFFFFF"><input name="add[mqeditdofun]" type="text" id="mqeditdofun" value="<?=$r[mqeditdofun]?>">
+        <font color="#666666">(一般不设置，格式“函数名##参数”参数可不设置)</font></td>
+    </tr>
+    <tr> 
+      <td height="25" bgcolor="#FFFFFF" colspan='2'> user.php添加 function xxx($mid,$add,$isadd,$isq,$cs) $add为用户提交的表单 || 模型预处理函数在数据写入数据库后执行</td>
+    </tr>
     <tr bgcolor="#FFFFFF"> 
       <td height="25">&nbsp;</td>
       <td height="25"><input type="submit" name="Submit" value="提交"> <input type="reset" name="Submit2" value="重置"></td>

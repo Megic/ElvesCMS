@@ -5209,6 +5209,26 @@ function DoFFun($mid,$f,$value,$isadd=1,$isq=0){
 	return $value;
 }
 
+//执行模型函数BY Megic
+//$add为表单
+function MDoFFun($mid,$add,$isadd=1,$isq=0){
+	global $Elves,$dbtbpre,$emod_r;
+	if($isq==1)//前台
+	{
+		$dofun=$isadd==1?$emod_r[$mid]['mqadddofun']:$emod_r[$mid]['mqeditdofun'];
+	}
+	else//后台
+	{
+		$dofun=$isadd==1?$emod_r[$mid]['madddofun']:$emod_r[$mid]['meditdofun'];
+	}
+	$r=explode('##',$dofun);
+	if($r[0])
+	{
+		$fun=$r[0];
+		$value=$fun($mid,$add,$isadd,$isq,$r[1]);
+	}
+	return $value;
+}
 //取得字段名
 function ChGetFname($mid,$f){
 	global $Elves,$dbtbpre,$emod_r;
@@ -6583,6 +6603,10 @@ function GetModCache(){
 'editdofunf'=>'".addslashes($editdofunf)."',
 'qadddofunf'=>'".addslashes($qadddofunf)."',
 'qeditdofunf'=>'".addslashes($qeditdofunf)."',
+'madddofun'=>'".addslashes($mr[madddofun])."',
+'meditdofun'=>'".addslashes($mr[meditdofun])."',
+'mqadddofun'=>'".addslashes($mr[mqadddofun])."',
+'mqeditdofun'=>'".addslashes($mr[mqeditdofun])."',
 'definfovoteid'=>".$mr[definfovoteid].",
 'orderf'=>'".addslashes($mr[orderf])."',
 'sonclass'=>'".addslashes($mr[sonclass])."',
