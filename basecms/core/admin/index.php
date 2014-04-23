@@ -78,49 +78,53 @@ function CheckLogin(obj){
 }
 </script>
 <style>
-  
-  h1{font-size: 26px;font-family: '微软雅黑';color: #fcff00;}
-  h1 em{font-size: 14px;padding: 0px;color: #fff;}
-  .ctable{background-color: #6699cc;}
-    .ctable td{color: #fff;font-size: 14px;padding: 5px;}
-    .ctable td input,.ctable td select{border: 1px solid #fff;line-height: 25px;height: 25px;}
-    button{height: 40px;padding-left: 20px;padding-right: 20px;}
+  body{font-family: '微软雅黑';}
+  h1{font-size: 22px;color: #666;border-left: 5px solid #6699cc;padding-left: 10px;display: block;position: relative;}
+  #time{font-size: 12px;color: #aaa;}
+  h1 em{font-size: 14px;padding: 0px;color: #999;font-style: normal;}
+  .ctable{background-color: #6699cc;border: 20px solid #6699cc;}
+    .ctable td{color: #fff;font-size: 14px;padding: 3px;}
+    .ctable td input,.ctable td select{border: 1px solid #fff;line-height: 30px;height: 30px;}
+    button{height: 40px;padding-left: 110px;padding-right: 110px;border: 1px solid #fff;color: #444;font-size: 14px;cursor: pointer;
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+    }
+    button:hover{border: 1px solid #4275a7;}
 </style>
 </head>
 
 <body text="383636"  onload="document.login.username.focus();">
 <table width="98" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr> 
-    <td height="60">&nbsp;</td>
+    <td height="120">&nbsp;</td>
   </tr>
 </table>
-<table width="524" border="0"  class="ctable"cellspacing="0" cellpadding="0" align="center" height="320">
+<table width="410" border="0"  cellspacing="0" cellpadding="0" align="center" height="320">
   <form name="login" id="login" method="post" action="elveadmin.php" onsubmit="return CheckLogin(document.login);">
     <input type="hidden" name="melve" value="login">
+
     <tr> 
-      <td width="61" rowspan="3" valign="top"></td>
-      <td colspan="3"></td>
-    </tr>
-    <tr> 
-      <td width="280" valign="top" >
-       <h1>管理系统  <em>后台登录</em> </h1> 
-      </td>
-      <td width="157" rowspan="2" valign="top" > 
-     </td>
-      <td width="65" rowspan="2" valign="top"> 
-       
-      </td>
-    </tr>
-    <tr> 
-      <td height="80"> <table width="230" height="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+      <td height="80">
+<h1>管理系统  <em>LOGIN</em> <div id="time"></div></h1>  <script>
+document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());
+setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+</script>
+       <table  class="ctable" width="100%" height="100%" border="0" align="right" cellpadding="0" cellspacing="0">
           <tr> 
             <td width="50" height="27">用户名: </td>
-            <td colspan="2"> <input name="username" type="text" class="b-form2" size="24"> 
+            <td colspan="2"> <input name="username" type="text" class="b-form2" size="38"> 
             </td>
           </tr>
           <tr> 
             <td height="27">密&nbsp;&nbsp;码:&nbsp;</td>
-            <td colspan="2"> <input name="password" type="password" class="b-form2" size="24"> 
+            <td colspan="2"> <input name="password" type="password" class="b-form2" size="38"> 
             </td>
           </tr>
 		  <?php
@@ -129,14 +133,14 @@ function CheckLogin(obj){
 		  ?>
           <tr> 
             <td height="27">认证码:&nbsp;</td>
-            <td colspan="2"><input name="loginauth" type="password" id="loginauth" class="b-form2" size="24"></td>
+            <td colspan="2"><input name="loginauth" type="password" id="loginauth" class="b-form2" size="38"></td>
           </tr>
           <?php
 		  }
 		  ?>
           <tr>
             <td height="27">提&nbsp;&nbsp;问:&nbsp;</td>
-            <td colspan="2"><select name="equestion" id="equestion" onchange="if(this.options[this.selectedIndex].value==0){showanswer.style.display='none';}else{showanswer.style.display='';}">
+            <td colspan="2"><select name="equestion" id="equestion"onchange="if(this.options[this.selectedIndex].value==0){showanswer.style.display='none';}else{showanswer.style.display='';}">
                 <option value="0">无安全提问</option>
                 <option value="1">母亲的名字</option>
                 <option value="2">爷爷的名字</option>
@@ -149,7 +153,7 @@ function CheckLogin(obj){
           </tr>
           <tr id="showanswer">
             <td height="27">答&nbsp;&nbsp;案:&nbsp;</td>
-            <td colspan="2"><input name="eanswer" type="text" id="eanswer" class="b-form2" size="24"></td>
+            <td colspan="2"><input name="eanswer" type="text" id="eanswer" class="b-form2" size="38"></td>
           </tr>
           <?php
 		  if(empty($public_r['adminloginkey']))
@@ -180,7 +184,7 @@ function CheckLogin(obj){
         </table></td>
     </tr>
     <tr> 
-      <td colspan="4"><table width="100%" border="0" cellpadding="0" cellspacing="0" >
+      <td ><table width="100%" border="0" cellpadding="0" cellspacing="0" >
           <tr> 
             <td width="111" height="32">&nbsp;</td>
             <td width="111" valign="top">&nbsp;</td>
