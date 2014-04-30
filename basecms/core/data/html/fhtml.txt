@@ -434,7 +434,7 @@ document.getElementById("addpicdown").innerHTML="<table width='100%' border=0 ce
 </table>
 [!--morepic--]
 [!--date--]
-<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--melve.var--]]))?>" size="[!--fsize.w--]" onclick="setday(this);">
+<input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--melve.var--]]))?>" size="[!--fsize.w--]" class="sys_time">
 [!--date--]
 [!--color--]
 <input name="[!--melve.var--]" type="text" id="[!--melve.var--]" value="<?=$elvefirstpost==1?"[!--melve.def.val--]":ehtmlspecialchars(stripSlashes($r[[!--melve.var--]]))?>" size="[!--fsize.w--]" onclick="FieldChangeColor(this);">
