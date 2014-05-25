@@ -368,8 +368,10 @@ $ftnr=ReturnFirsttitleNameList($r['firsttitle'],$r['isgood']);
   </style>
 
   <script src="../data/js/jquery-1.10.2.min.js"></script>
+  <script src="../data/js/lhgcalendar/lhgcalendar.min.js"></script>
   <script>
 $(function(){//By Megic
+  $('.sys_time').calendar();//日期输入
   $("a.showPIC").hover(function(){//图片预览
     $(this).css('position','relative');
     $(this).css('z-index','9999');
