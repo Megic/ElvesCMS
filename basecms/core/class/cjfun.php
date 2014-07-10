@@ -1104,7 +1104,10 @@ function PageViewCjList($classid,$cr,$userid,$username){
 		{}
 		else
 		{
-			$dourl=$cr[httpurl].$dourl;
+
+			if(strstr($cr[httpurl],"[!--newsurl--]")){
+				$dourl=str_replace("[!--newsurl--]",$dourl,$cr[httpurl]);
+			}else{ 	$dourl=$cr[httpurl].$dourl;}
 		}
 		//替换地址
 		$dourl=RepCjUrlStr($dourl);
@@ -1223,7 +1226,10 @@ function ViewEchoUrl($text,$exp,$exp1,$dr,$url,$classid,$num,$checkrnd){
 		{}
 		else
 		{
-			$dourl=$url.$dourl;
+			
+			if(strstr($url,"[!--newsurl--]")){
+				$dourl=str_replace("[!--newsurl--]",$dourl,$url);
+			}else{ 	$dourl=$url.$dourl;}
 		}
 		//替换地址
 		$dourl=RepCjUrlStr($dourl);
