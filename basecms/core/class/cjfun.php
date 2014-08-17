@@ -851,7 +851,8 @@ function EchoUrl($text,$exp,$exp1,$dr,$url,$classid,$num,$checkrnd){
 	{
 		$titlepic=$dr[z_titlepicl];
 	}
-	for($i=1;$i<count($r)&&$i<=$num;$i++)
+	$nleght=count($r)<$num?count($r):$num;
+	for($i=$nleght-1;$i>=0;$i--)
 	{
 		$r1=explode($e2,$r[$i]);
 		$dourl=trim($r1[0]);
@@ -911,7 +912,7 @@ function PageEchoUrl($classid,$cr,$userid,$username){
 	{
 		$count=$cr[num];
 	}
-	for($i=0;$i<$count;$i++)
+	for($i=$count-1;$i>=0;$i--)
 	{
 		$dourl=trim($url_r[$i]);
 		if(empty($dourl))
