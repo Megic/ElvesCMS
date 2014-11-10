@@ -111,14 +111,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     <input type="hidden" name="melve" value="login">
 
     <tr> 
-      <td height="80">
+      <td height="256">
 <h1>管理系统  <em>LOGIN</em> <div id="time"></div></h1>  <script>
 document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());
 setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
 </script>
-       <table  class="ctable" width="100%" height="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+       <table  class="ctable" width="100%" height="256px" border="0" align="right" cellpadding="0" cellspacing="0">
           <tr> 
-            <td width="60" height="27">用户名: </td>
+            <td width="60" height="27"><div style="width:60px">用户名: </div></td>
             <td colspan="2"> <input name="username" type="text" class="b-form2" size="38"> 
             </td>
           </tr>
