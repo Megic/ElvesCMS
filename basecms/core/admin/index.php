@@ -118,7 +118,7 @@ setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString
 </script>
        <table  class="ctable" width="100%" height="100%" border="0" align="right" cellpadding="0" cellspacing="0">
           <tr> 
-            <td width="50" height="27">用户名: </td>
+            <td width="60" height="27">用户名: </td>
             <td colspan="2"> <input name="username" type="text" class="b-form2" size="38"> 
             </td>
           </tr>
