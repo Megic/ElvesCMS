@@ -33,10 +33,10 @@ else
 	COLOR: black; TEXT-DECORATION: none
 }
 .flyoutMenu {
-	BACKGROUND-COLOR: #C9F1FF
+	BACKGROUND-COLOR: #eee
 }
 .flyoutMenu TD.flyoutLink {
-	BORDER-RIGHT: #C9F1FF 1px solid; BORDER-TOP: #C9F1FF 1px solid; BORDER-LEFT: #C9F1FF 1px solid; CURSOR: hand; PADDING-TOP: 1px; BORDER-BOTTOM: #C9F1FF 1px solid
+	BORDER-RIGHT: #eee 1px solid; BORDER-TOP: #eee 1px solid; BORDER-LEFT: #eee 1px solid; CURSOR: hand; PADDING-TOP: 1px; BORDER-BOTTOM: #eee 1px solid
 }
 .flyoutMenu1 {
 	BACKGROUND-COLOR: #fbf9f9
@@ -82,8 +82,8 @@ function over(obj){
 function out(obj){
 		if(obj.className=="flyoutLink")
 		{
-			obj.style.backgroundColor='#C9F1FF'
-			obj.style.borderColor = 'C9F1FF'
+			obj.style.backgroundColor='#eee'
+			obj.style.borderColor = 'eee'
 		}
 		else if(obj.className=="#flyoutLink1")
 		{
@@ -121,17 +121,17 @@ function tododisplay(ss){
 }
 </SCRIPT>
 </HEAD>
-<BODY bgColor="#C9F1FF" leftMargin=0 topMargin=0>
+<BODY bgColor="#eee" leftMargin=0 topMargin=0>
 <TABLE width="100%" height="100%" border=0 cellpadding="0" cellSpacing=0>
 <tr>
 <td height="60">
 
-  <TABLE width="100%" height="60" border=0 cellpadding="0" cellSpacing=0 background="adminstyle/2/images/topbg.gif">
+  <TABLE width="100%" height="60" border=0 cellpadding="0" cellSpacing=0 style="background-color: #6699cc;">
     <TBODY>
       <TR> 
-        <TD width="180"><div align="center"><a href="main.php" target="main" title="Elves网站管理系统"><img src="adminstyle/2/images/logo.gif" border="0"></a></div></TD>
+        <TD width="180"><div align="center"><a href="main.php" target="main" title="Elves网站管理系统"><img src="adminstyle/2/images/logo.png" border="0"></a></div></TD>
 		<TD height=60> 
-			<TABLE width=480 height="60" border=0 cellpadding="0" cellSpacing=0>
+			<TABLE width=100% height="60" border=0 cellpadding="0" cellSpacing=0>
                 <TBODY>
                   <TR align=middle> 
                     <TD width=80 onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#8CBDEF';tododisplay('elveinfomenu');" onclick="switchSysBarInfo();JumpToLeftMenu('Listmelve.php');" style="CURSOR: hand"> 
@@ -152,7 +152,7 @@ function tododisplay(ss){
                           <td height="23"><div align="center"><font color="#FFFFFF"><strong>功能菜单</strong></font></div></td>
                         </tr>
                       </table></TD>
-                    <TD width="351"><div align="right"><font color="#ffffff">用户：<a href="user/EditPassword.php" target="main"><font color="#ffffff"><b><?=$loginin?></b></font></a>&nbsp;&nbsp;&nbsp;[<a href="#elve" onclick="if(confirm('确认要退出?')){JumpToMain('elveadmin.php?melve=exit');}"><font color="#ffffff">退出</font></a>]&nbsp;&nbsp;</font></div></TD>
+                    <TD ><div align="right" style="margin-right:15px"><font color="#ffffff">用户：<a href="user/EditPassword.php" target="main"><font color="#ffffff"><b><?=$loginin?></b></font></a>&nbsp;&nbsp;&nbsp;[<a href="#elve" onclick="if(confirm('确认要退出?')){JumpToMain('elveadmin.php?melve=exit');}"><font color="#ffffff">退出</font></a>]&nbsp;&nbsp;</font></div></TD>
                   </TR>
                 </TBODY>
               </TABLE>
@@ -168,7 +168,7 @@ function tododisplay(ss){
   <TABLE width="100%" height="22" border=0 cellpadding="0" cellSpacing=0>
     <TBODY>
       <TR> 
-        <TD class=flyoutMenu width="1%"> </TD>   
+        <TD class=flyoutMenu style="background:#eee" width="1%"> </TD>   
 		    <TD width="99%" height="27"> 
               <TABLE class=flyoutMenu border=0 id="elveinfomenu">
                 <TBODY>
@@ -290,14 +290,14 @@ function tododisplay(ss){
   <TABLE width="100%" height="100%" cellpadding="0" cellSpacing=0 border=0 borderColor="#ff0000">
   <TBODY>
     <TR> 
-      <TD width="123" valign="top" bgcolor="#C9F1FF">
+      <TD width="123" valign="top" bgcolor="#eee">
 		<IFRAME frameBorder="0" id="dorepage" name="dorepage" scrolling="no" src="DoTimeRepage.php" style="HEIGHT:0;VISIBILITY:inherit;WIDTH:0;Z-INDEX:1"></IFRAME>
       </TD>
       <TD noWrap id="frmTitle">
 		<IFRAME frameBorder="0" id="left" name="left" scrolling="auto" src="Listmelve.php" style="HEIGHT:100%;VISIBILITY:inherit;WIDTH:200px;Z-INDEX:2"></IFRAME>
       </TD>
       <TD>
-		<TABLE border=0 cellPadding=0 cellSpacing=0 height="100%" bgcolor="#C9F1FF">
+		<TABLE border=0 cellPadding=0 cellSpacing=0 height="100%" bgcolor="#f8f8f8">
           <TBODY>
             <tr> 
               <TD onclick="switchSysBar()" style="HEIGHT:100%;"> <font style="COLOR:666666;CURSOR:hand;FONT-FAMILY:Webdings;FONT-SIZE:9pt;"> 
