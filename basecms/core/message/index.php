@@ -1,7 +1,12 @@
 ﻿<?php
 if(!defined('InElvesCMS'))
 {
-  exit();
+	exit();
+}
+$ajax = $_GET['ajax'];
+if($ajax){//jsonp返回
+echo '{"msg":"'.$error.'","url":"'.$gotourl.'"}';
+exit;
 }
 ?>
 <!DOCTYPE>
@@ -18,7 +23,7 @@ if(!$noautourl)
 <SCRIPT language=javascript>
 var secs=3;//3秒
 for(i=1;i<=secs;i++) 
-{ window.setTimeout("update(" + i + ")", i * 1000);} 
+{ window.setTimeout("update(" + i + ")", i * 500);} 
 function update(num) 
 { 
 if(num == secs) 
@@ -33,7 +38,7 @@ else
 </head>
 
 <body>
-  <style> table{margin-top: 200px;}table td{background-color: #ffcc66;font-family: '微软雅黑';} td{border: 10px solid #ffcc66;} .tips{background-color: #cc9966;color: #fff;line-height: 20px;text-align: center;} .tips p{font-size: 12px;padding: 0px;margin: 0px;} b{font-size: 14px;color: #333;} a{color: #996633;font-size: 12px;} 
+<style>table{margin-top: 200px;}table td{background-color: #f1f1f1;font-family: '微软雅黑';} td{border: 10px solid #f1f1f1;} .tips{background-color: #0099ff;color: #fff;line-height: 20px;text-align: center;} .tips p{font-size: 12px;padding: 0px;margin: 0px;} b{font-size: 14px;color: #333;} a{color: #996633;font-size: 12px;} 
 .tableborder{width: 500px}
 @media screen and (max-width: 650px) {
 .tableborder{width: 100%;max-width: 500px}

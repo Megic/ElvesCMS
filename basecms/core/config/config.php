@@ -9,14 +9,14 @@ $elve_config=array();
 //数据库设置
 $elve_config['db']['usedb']='mysql';	//数据库类型
 $elve_config['db']['dbver']='5.0';	//数据库版本
-$elve_config['db']['dbserver']='localhost';	//数据库登录地址
-$elve_config['db']['dbport']='';	//端口，不填为按默认
-$elve_config['db']['dbusername']='gzqnsw';	//数据库用户名
-$elve_config['db']['dbpassword']='gzqnsw_admin';	//数据库密码
-$elve_config['db']['dbname']='gzqnsw';	//数据库名
+$elve_config['db']['dbserver']='#数据库地址';	//数据库登录地址
+$elve_config['db']['dbport']='#数据库端口';	//端口，不填为按默认
+$elve_config['db']['dbusername']='#数据库用户名';	//数据库用户名
+$elve_config['db']['dbpassword']='#数据库密码';	//数据库密码
+$elve_config['db']['dbname']='#数据库名';	//数据库名
 $elve_config['db']['setchar']='utf8';	//设置默认编码
 $elve_config['db']['dbchar']='utf8';	//数据库默认编码
-$elve_config['db']['dbtbpre']='base_';	//数据表前缀
+$elve_config['db']['dbtbpre']='#数据表前缀';	//数据表前缀
 $dbtbpre=$elve_config['db']['dbtbpre'];	//数据表前缀
 $elve_config['db']['showerror']=1;	//显示SQL错误提示(0为不显示,1为显示)
 
