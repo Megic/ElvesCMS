@@ -1,7 +1,7 @@
 <?php 
 
 // echo '修改成功';
-if($_POST['localhost']){
+if(!empty($_POST['localhost'])){
 
 $dbhost = $_POST['localhost'];//数据库服务器地址
 $dbuser =$_POST['dbuser'];//帐号
@@ -20,7 +20,7 @@ $content= str_replace("#数据库端口",$dbport,$content);
 $content= str_replace("#数据库用户名",$dbuser,$content);
 $content= str_replace("#数据库密码",$dbpw,$content);
 $content= str_replace("#数据库名",$dbname,$content);
-$content= str_replace("#数据表前缀",$dbfixed,$content);
+$content= str_replace("#数据表前缀",$dbfixed."_",$content);
 file_put_contents($filename, $content);
 $filename2='baselve.sql';
 $content2 = file_get_contents($filename2);
@@ -62,7 +62,7 @@ function Import_sql($file)
   for($j=0;$j<$c1;$j++)
   {
     $ck=substr($file2[$j],0,4);//取每行的前4个字符
-    if( ereg("#",$ck)||ereg("--",$ck) )//去掉注释
+    if( preg_match("/#/",$ck)||preg_match("/--/",$ck) )//去掉注释
     {
       continue;
     }
@@ -83,7 +83,7 @@ function Import_sql($file)
     echo '...';
     if($sql)
     {
-      if(eregi("CREATE TABLE",$sql))//如果当前的sql语句是创建新表,则考虑版本兼容,以及重设字符集
+      if(preg_match("/CREATE TABLE/",$sql))//如果当前的sql语句是创建新表,则考虑版本兼容,以及重设字符集
       {
         //$mysqlV=mysql_get_server_info();
         $sql=preg_replace("/DEFAULT CHARSET=([a-z0-9]+)/is","",$sql);//去除原来的字符集设置信息

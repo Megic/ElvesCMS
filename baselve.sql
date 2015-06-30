@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 2015-06-30 09:12:19
--- 服务器版本： 5.6.17
--- PHP Version: 5.5.12
+-- 主机: localhost
+-- 生成日期: 2014 年 03 月 09 日 20:56
+-- 服务器版本: 5.5.24-log
+-- PHP 版本: 5.4.3
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `mask`
+-- 数据库: `elves_cms`
 --
 
 -- --------------------------------------------------------
@@ -3489,41 +3489,14 @@ CREATE TABLE IF NOT EXISTS `base_melvedolog` (
   `pubid` bigint(16) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`logid`),
   KEY `pubid` (`pubid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- 转存表中的数据 `base_melvedolog`
 --
 
 INSERT INTO `base_melvedolog` (`logid`, `logip`, `logtime`, `username`, `melve`, `doing`, `pubid`) VALUES
-(1, '::1', '2013-12-07 19:40:10', 'ADmegic', 'login', '---', 0),
-(2, '127.0.0.1', '2015-06-30 13:05:45', 'ADmegic', 'login', '---', 0),
-(3, '127.0.0.1', '2015-06-30 13:19:42', 'ADmegic', 'Setmelve', '---', 0),
-(4, '127.0.0.1', '2015-06-30 13:20:18', 'ADmegic', 'ChangemelveData', '---', 0),
-(5, '127.0.0.1', '2015-06-30 13:20:20', 'ADmegic', 'ReClassPath', '---', 0),
-(6, '127.0.0.1', '2015-06-30 13:20:21', 'ADmegic', 'DelFcListClass', '---', 0),
-(7, '127.0.0.1', '2015-06-30 13:20:34', 'ADmegic', 'ChangeAllModForm', 'ChangeClass=1', 0),
-(8, '127.0.0.1', '2015-06-30 13:20:37', 'ADmegic', 'ReDtPage', '---', 0),
-(9, '127.0.0.1', '2015-06-30 13:23:17', 'ADmegic', 'EditMemberGroup', 'groupid=3<br>groupname=企业会员', 0),
-(10, '127.0.0.1', '2015-06-30 13:24:41', 'ADmegic', 'Setmelve', '---', 0),
-(11, '127.0.0.1', '2015-06-30 14:06:28', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(12, '127.0.0.1', '2015-06-30 14:09:52', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(13, '127.0.0.1', '2015-06-30 14:17:53', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(14, '127.0.0.1', '2015-06-30 14:32:14', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(15, '127.0.0.1', '2015-06-30 14:45:21', 'ADmegic', 'EditDtTempFiletext', 'tempid=4<br>tempname=投稿选择栏目页', 0),
-(16, '127.0.0.1', '2015-06-30 14:46:33', 'ADmegic', 'EditDtTempFiletext', 'tempid=2<br>tempname=主界面尾部', 0),
-(17, '127.0.0.1', '2015-06-30 14:47:18', 'ADmegic', 'EditDtTempFiletext', 'tempid=2<br>tempname=主界面尾部', 0),
-(18, '127.0.0.1', '2015-06-30 14:53:56', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(19, '127.0.0.1', '2015-06-30 14:55:43', 'ADmegic', 'EditDtTempFiletext', 'tempid=31<br>tempname=会员中心首页', 0),
-(20, '127.0.0.1', '2015-06-30 14:56:00', 'ADmegic', 'EditDtTempFiletext', 'tempid=31<br>tempname=会员中心首页', 0),
-(21, '127.0.0.1', '2015-06-30 14:57:22', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(22, '127.0.0.1', '2015-06-30 14:58:00', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(23, '127.0.0.1', '2015-06-30 15:01:58', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(24, '127.0.0.1', '2015-06-30 15:02:55', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(25, '127.0.0.1', '2015-06-30 15:06:59', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(26, '127.0.0.1', '2015-06-30 15:07:52', 'ADmegic', 'EditDtTempFiletext', 'tempid=25<br>tempname=会员登录页面', 0),
-(27, '127.0.0.1', '2015-06-30 15:09:27', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0),
-(28, '127.0.0.1', '2015-06-30 15:09:53', 'ADmegic', 'EditDtTempFiletext', 'tempid=1<br>tempname=主界面头部', 0);
+(1, '::1', '2013-12-07 19:40:10', 'ADmegic', 'login', '---', 0);
 
 -- --------------------------------------------------------
 
@@ -4563,15 +4536,14 @@ CREATE TABLE IF NOT EXISTS `base_melvelog` (
   `loginauth` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`loginid`),
   KEY `status` (`status`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- 转存表中的数据 `base_melvelog`
 --
 
 INSERT INTO `base_melvelog` (`loginid`, `username`, `logintime`, `loginip`, `status`, `password`, `loginauth`) VALUES
-(1, 'ADmegic', '2013-12-07 19:40:10', '::1', 1, '', 0),
-(2, 'ADmegic', '2015-06-30 13:05:45', '127.0.0.1', 1, '', 0);
+(1, 'ADmegic', '2013-12-07 19:40:10', '::1', 1, '', 0);
 
 -- --------------------------------------------------------
 
@@ -4611,14 +4583,7 @@ CREATE TABLE IF NOT EXISTS `base_melvemember` (
   PRIMARY KEY (`userid`),
   UNIQUE KEY `username` (`username`),
   KEY `groupid` (`groupid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- 转存表中的数据 `base_melvemember`
---
-
-INSERT INTO `base_melvemember` (`userid`, `username`, `password`, `rnd`, `email`, `registertime`, `groupid`, `userfen`, `userdate`, `money`, `zgroupid`, `havemsg`, `checked`, `salt`, `userkey`) VALUES
-(1, 'Megic', 'a9099c34bcc809633a61fcabeb94eced', '4449999999vvvvvvvvbb', '420636220@qq.com', 1435642502, 1, 0, 0, 0.00, 0, 0, 1, 'YYYYYY', 'YYYYYYYYYYYY');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -4650,13 +4615,6 @@ CREATE TABLE IF NOT EXISTS `base_melvememberadd` (
   `loginnum` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`userid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `base_melvememberadd`
---
-
-INSERT INTO `base_melvememberadd` (`userid`, `truename`, `oicq`, `msn`, `mycall`, `phone`, `address`, `zip`, `spacestyleid`, `homepage`, `saytext`, `company`, `fax`, `userpic`, `spacename`, `spacegg`, `viewstats`, `regip`, `lasttime`, `lastip`, `loginnum`) VALUES
-(1, '', '', '', '', '', '', '520636', 1, '广州白云大道北', '', '', '', '', '', '', 0, '127.0.0.1', 1435648259, '127.0.0.1', 2);
 
 -- --------------------------------------------------------
 
@@ -4808,7 +4766,7 @@ CREATE TABLE IF NOT EXISTS `base_melvemembergroup` (
 INSERT INTO `base_melvemembergroup` (`groupid`, `groupname`, `level`, `checked`, `favanum`, `daydown`, `msglen`, `msgnum`, `canreg`, `formid`, `regchecked`, `spacestyleid`, `dayaddinfo`, `infochecked`, `plchecked`) VALUES
 (1, '普通会员', 1, 0, 120, 0, 255, 50, 1, 1, 0, 1, 0, 0, 0),
 (2, 'VIP会员', 2, 0, 200, 0, 255, 120, 0, 1, 0, 1, 0, 0, 0),
-(3, '企业会员', 1, 0, 120, 0, 255, 50, 0, 2, 0, 2, 0, 0, 0),
+(3, '企业会员', 1, 0, 120, 0, 255, 50, 1, 2, 0, 2, 0, 0, 0),
 (4, '企业VIP会员', 2, 0, 200, 0, 255, 120, 0, 2, 0, 2, 0, 0, 0);
 
 -- --------------------------------------------------------
@@ -5640,7 +5598,7 @@ CREATE TABLE IF NOT EXISTS `base_melvepublic` (
 --
 
 INSERT INTO `base_melvepublic` (`id`, `newsurl`, `sitename`, `email`, `filetype`, `filesize`, `hotnum`, `newnum`, `relistnum`, `rmelvenum`, `min_keyboard`, `max_keyboard`, `search_num`, `search_pagenum`, `newslink`, `checked`, `searchtime`, `loginnum`, `logintime`, `addnews_ok`, `register_ok`, `indextype`, `goodlencord`, `goodtype`, `goodnum`, `searchtype`, `exittime`, `smalltextlen`, `defaultgroupid`, `fileurl`, `phpmode`, `ftphost`, `ftpport`, `ftpusername`, `ftppassword`, `ftppath`, `ftpmode`, `install`, `hotplnum`, `softversion`, `lctime`, `dorepnum`, `loadtempnum`, `firstnum`, `bakdbpath`, `bakdbzip`, `downpass`, `min_userlen`, `max_userlen`, `min_passlen`, `max_passlen`, `filechmod`, `tid`, `tbname`, `loginkey_ok`, `limittype`, `redodown`, `candocode`, `opennotcj`, `reuserpagenum`, `revotejsnum`, `readjsnum`, `qaddtran`, `qaddtransize`, `ebakthisdb`, `delnewsnum`, `markpos`, `markimg`, `marktext`, `markfontsize`, `markfontcolor`, `markfont`, `adminloginkey`, `php_outtime`, `listpagefun`, `textpagefun`, `adfile`, `notsaveurl`, `jstempid`, `rssnum`, `rsssub`, `savetxtf`, `dorepdlevelnum`, `listpagelistfun`, `listpagelistnum`, `infolinknum`, `searchgroupid`, `opencopytext`, `reuserjsnum`, `reuserlistnum`, `opentitleurl`, `qaddtranimgtype`, `qaddtranfile`, `qaddtranfilesize`, `qaddtranfiletype`, `sendmailtype`, `smtphost`, `fromemail`, `loginemail`, `emailusername`, `emailpassword`, `smtpport`, `emailname`, `deftempid`, `feedbacktfile`, `feedbackfilesize`, `feedbackfiletype`, `searchtempvar`, `showinfolevel`, `navfh`, `spicwidth`, `spicheight`, `spickill`, `jpgquality`, `markpct`, `redoview`, `reggetfen`, `regbooktime`, `revotetime`, `nreclass`, `nreinfo`, `nrejs`, `fpath`, `filepath`, `openmembertranimg`, `memberimgsize`, `memberimgtype`, `openmembertranfile`, `memberfilesize`, `memberfiletype`, `nottobq`, `defspacestyleid`, `canposturl`, `openspace`, `defadminstyle`, `realltime`, `closeip`, `openip`, `hopenip`, `closewords`, `closewordsf`, `textpagelistnum`, `memberlistlevel`, `wapopen`, `wapdefstyle`, `wapshowmid`, `waplistnum`, `wapsubtitle`, `wapshowdate`, `wapchar`, `ebakcanlistdb`, `paymoneytofen`, `payminmoney`, `keytog`, `keyrnd`, `keytime`, `regkey_ok`, `opengetdown`, `gbkey_ok`, `fbkey_ok`, `newaddinfotime`, `classnavline`, `classnavfh`, `adminstyle`, `sitekey`, `siteintro`, `docnewsnum`, `openschall`, `schallfield`, `schallminlen`, `schallmaxlen`, `schallnotcid`, `schallnum`, `schallpagenum`, `dtcanbq`, `dtcachetime`, `regretime`, `regclosewords`, `regemailonly`, `repkeynum`, `getpasstime`, `acttime`, `regacttype`, `acttext`, `getpasstext`, `acttitle`, `getpasstitle`, `opengetpass`, `hlistinfonum`, `qlistinfonum`, `dtncanbq`, `dtncachetime`, `readdinfotime`, `qeditinfotime`, `ftpssl`, `ftppasv`, `ftpouttime`, `onclicktype`, `onclickfilesize`, `onclickfiletime`, `schalltime`, `defprinttempid`, `opentags`, `tagstempid`, `usetags`, `chtags`, `tagslistnum`, `closeqdt`, `settop`, `qlistinfomod`, `gb_num`, `member_num`, `space_num`, `opendoip`, `closedoip`, `doiptype`, `filelday`, `infolday`, `baktempnum`, `dorepkey`, `dorepword`, `onclickrnd`, `indexpagedt`, `keybgcolor`, `keyfontcolor`, `keydistcolor`, `indexpageid`, `closeqdtmsg`, `openfileserver`, `closemods`, `fieldandtop`, `fieldandclosetb`, `filedatatbs`, `filedeftb`, `firsttitlename`, `isgoodname`, `closelisttemp`, `chclasscolor`, `timeclose`, `timeclosedo`, `ipaddinfonum`, `ipaddinfotime`, `rewriteinfo`, `rewriteclass`, `rewriteinfotype`, `rewritetags`, `closehmenu`) VALUES
-(1, 'http://localhost/mask/', 'Elves网站管理系统', 'admin@webelves.org', '|.gif|.jpg|.swf|.rar|.zip|.mp3|.wmv|.txt|.doc|', 2048, 10, 10, 8, 100, 2, 20, 20, 16, 0, 0, 30, 5, 60, 0, 0, '.html', 0, '', 10, '.html', 40, 160, 1, 'http://localhost/mask/d/file/', 0, '', '21', '', '', '', 0, 0, 10, '7.0,1357574410', 1222406370, 300, 50, 10, 'bdata', 'zip', 'V4CYBXGpbeWwqiAi9p8b', 3, 20, 6, 20, 1, 1, 'news', 0, 0, 1, 1, 0, 50, 100, 100, 1, 50, 1, 300, 5, '../data/mark/maskdef.gif', '', '5', '', '../data/mark/cour.ttf', 1, 0, 'sys_ShowListPage', 'sys_ShowTextPage', 'thea', '', 1, 50, 300, ',article.newstext,', 300, 'sys_ShowListMorePage', 12, 100, 0, 0, 100, 8, 1, '|.gif|.jpg|', 1, 500, '|.zip|.rar|', 1, 'smtp.163.com', 'elve@163.com', 1, 'elve', 'elve', '25', 'ElvesCMS', 0, 1, 500, '|.zip|.rar|', 1, 0, '>', 105, 118, 1, 80, 65, 24, 0, 30, 30, ',', ',', ',', 0, 'Y-m-d', 1, 50, '|.gif|.jpg|', 1, 500, '|.zip|.rar|', ',', 1, '', 1, 1, 0, '', '', '', '', '', 6, 0, 1, 1, '', 10, 30, 'm-d', 0, 0, 10, 1, 2, 'JrVyb6GFrGB6q2GZDT8DjBJJJaCBuR', 30, 0, 0, 0, 0, 0, 20, '&nbsp;|&nbsp;', ',1,2,', 'Elves网站管理系统,ElvesCMS', '　　Elves软件是一家专注于网络软件开发的科技公司，其主营产品“Elves网站管理系统(ElvesCMS)”是目前国内应用最广泛的CMS程序。通过多年的不断创新与完善，使系统集安全、强大、稳定、灵活于一身。目前ElvesCMS程序已经广泛应用在国内数十万家网站，覆盖国内上千万上网人群，并经过上千家知名网站的严格检测，被称为国内最安全、最稳定的开源CMS系统。', 300, 0, 1, 3, 20, ',,', 20, 16, 1, 43200, 0, '', 1, 0, 72, 720, 0, '[!--username--] ，\r\n这封信是由 [!--sitename--] 发送的。\r\n\r\n您收到这封邮件，是因为在我们网站的新用户注册 Email 使用\r\n了您的地址。如果您并没有访问过我们的网站，或没有进行上述操作，请忽\r\n略这封邮件。您不需要退订或进行其他进一步的操作。\r\n\r\n----------------------------------------------------------------------\r\n帐号激活说明\r\n----------------------------------------------------------------------\r\n\r\n您是我们网站的新用户，注册 Email 时使用了本地址，我们需\r\n要对您的地址有效性进行验证以避免垃圾邮件或地址被滥用。\r\n\r\n您只需点击下面的链接即可激活您的帐号：\r\n\r\n[!--pageurl--]\r\n\r\n(如果上面不是链接形式，请将地址手工粘贴到浏览器地址栏再访问)\r\n\r\n感谢您的访问，祝您使用愉快！\r\n\r\n\r\n\r\n此致\r\n\r\n[!--sitename--] 管理团队.\r\n[!--news.url--]', '[!--username--] ，\r\n这封信是由 [!--sitename--] 发送的。\r\n\r\n您收到这封邮件，是因为在我们的网站上这个邮箱地址被登记为用户邮箱，\r\n且该用户请求使用 Email 密码重置功能所致。\r\n\r\n----------------------------------------------------------------------\r\n重要！\r\n----------------------------------------------------------------------\r\n\r\n如果您没有提交密码重置的请求或不是我们网站的注册用户，请立即忽略\r\n并删除这封邮件。只在您确认需要重置密码的情况下，才继续阅读下面的\r\n内容。\r\n\r\n----------------------------------------------------------------------\r\n密码重置说明\r\n----------------------------------------------------------------------\r\n\r\n您只需在提交请求后的三天之内，通过点击下面的链接重置您的密码：\r\n\r\n[!--pageurl--]\r\n\r\n(如果上面不是链接形式，请将地址手工粘贴到浏览器地址栏再访问)\r\n\r\n上面的页面打开后，输入新的密码后提交，之后您即可使用新的密码登录\r\n网站了。您可以在用户控制面板中随时修改您的密码。\r\n\r\n\r\n\r\n此致\r\n\r\n[!--sitename--] 管理团队.\r\n[!--news.url--]', '[[!--sitename--]] Email 地址验证', '[[!--sitename--]] 取回密码说明', 0, 30, 25, 1, 43200, 0, 0, 0, 0, 0, 0, 10, 60, 0, 1, 1, 1, ',1,2,3,4,5,6,7,8,', '', 25, 0, 0, 0, 20, 20, 25, '', '', '', 0, 0, 3, 0, 0, '', 0, '', '', '', 0, '', 0, ',shop,', 0, '', ',1,', 1, '一级头条|二级头条|三级头条|四级头条|五级头条|六级头条|七级头条|八级头条|九级头条', '一级推荐|二级推荐|三级推荐|四级推荐|五级推荐|六级推荐|七级推荐|八级推荐|九级推荐', '', '#99C4E3', '', '', 0, 0, '', '', '', '', '');
+(1, '/baselve/', 'Elves网站管理系统', 'admin@webelves.org', '|.gif|.jpg|.swf|.rar|.zip|.mp3|.wmv|.txt|.doc|', 2048, 10, 10, 8, 100, 2, 20, 20, 16, 0, 0, 30, 5, 60, 0, 0, '.html', 0, '', 10, '.html', 40, 160, 1, '/baselve/d/file/', 0, '', '21', '', '', '', 0, 0, 10, '7.0,1357574410', 1222406370, 300, 50, 10, 'bdata', 'zip', 'V4CYBXGpbeWwqiAi9p8b', 3, 20, 6, 20, 1, 1, 'news', 0, 0, 1, 1, 0, 50, 100, 100, 1, 50, 1, 300, 5, '../data/mark/maskdef.gif', '', '5', '', '../data/mark/cour.ttf', 1, 0, 'sys_ShowListPage', 'sys_ShowTextPage', 'thea', '', 1, 50, 300, ',article.newstext,', 300, 'sys_ShowListMorePage', 12, 100, 0, 0, 100, 8, 1, '|.gif|.jpg|', 1, 500, '|.zip|.rar|', 1, 'smtp.163.com', 'elve@163.com', 1, 'elve', 'elve', '25', 'ElvesCMS', 0, 1, 500, '|.zip|.rar|', 1, 0, '>', 105, 118, 1, 80, 65, 24, 0, 30, 30, ',', ',', ',', 0, 'Y-m-d', 1, 50, '|.gif|.jpg|', 1, 500, '|.zip|.rar|', ',', 1, '', 0, 1, 0, '', '', '', '', '', 6, 0, 1, 1, '', 10, 30, 'm-d', 0, 0, 10, 1, 2, 'JrVyb6GFrGB6q2GZDT8DjBJJJaCBuR', 30, 0, 0, 0, 0, 0, 20, '&nbsp;|&nbsp;', ',1,2,', 'Elves网站管理系统,ElvesCMS', '　　Elves软件是一家专注于网络软件开发的科技公司，其主营产品“Elves网站管理系统(ElvesCMS)”是目前国内应用最广泛的CMS程序。通过多年的不断创新与完善，使系统集安全、强大、稳定、灵活于一身。目前ElvesCMS程序已经广泛应用在国内数十万家网站，覆盖国内上千万上网人群，并经过上千家知名网站的严格检测，被称为国内最安全、最稳定的开源CMS系统。', 300, 0, 1, 3, 20, ',,', 20, 16, 1, 43200, 0, '', 1, 0, 72, 720, 0, '[!--username--] ，\r\n这封信是由 [!--sitename--] 发送的。\r\n\r\n您收到这封邮件，是因为在我们网站的新用户注册 Email 使用\r\n了您的地址。如果您并没有访问过我们的网站，或没有进行上述操作，请忽\r\n略这封邮件。您不需要退订或进行其他进一步的操作。\r\n\r\n----------------------------------------------------------------------\r\n帐号激活说明\r\n----------------------------------------------------------------------\r\n\r\n您是我们网站的新用户，注册 Email 时使用了本地址，我们需\r\n要对您的地址有效性进行验证以避免垃圾邮件或地址被滥用。\r\n\r\n您只需点击下面的链接即可激活您的帐号：\r\n\r\n[!--pageurl--]\r\n\r\n(如果上面不是链接形式，请将地址手工粘贴到浏览器地址栏再访问)\r\n\r\n感谢您的访问，祝您使用愉快！\r\n\r\n\r\n\r\n此致\r\n\r\n[!--sitename--] 管理团队.\r\n[!--news.url--]', '[!--username--] ，\r\n这封信是由 [!--sitename--] 发送的。\r\n\r\n您收到这封邮件，是因为在我们的网站上这个邮箱地址被登记为用户邮箱，\r\n且该用户请求使用 Email 密码重置功能所致。\r\n\r\n----------------------------------------------------------------------\r\n重要！\r\n----------------------------------------------------------------------\r\n\r\n如果您没有提交密码重置的请求或不是我们网站的注册用户，请立即忽略\r\n并删除这封邮件。只在您确认需要重置密码的情况下，才继续阅读下面的\r\n内容。\r\n\r\n----------------------------------------------------------------------\r\n密码重置说明\r\n----------------------------------------------------------------------\r\n\r\n您只需在提交请求后的三天之内，通过点击下面的链接重置您的密码：\r\n\r\n[!--pageurl--]\r\n\r\n(如果上面不是链接形式，请将地址手工粘贴到浏览器地址栏再访问)\r\n\r\n上面的页面打开后，输入新的密码后提交，之后您即可使用新的密码登录\r\n网站了。您可以在用户控制面板中随时修改您的密码。\r\n\r\n\r\n\r\n此致\r\n\r\n[!--sitename--] 管理团队.\r\n[!--news.url--]', '[[!--sitename--]] Email 地址验证', '[[!--sitename--]] 取回密码说明', 0, 30, 25, 1, 43200, 0, 0, 0, 0, 0, 0, 10, 60, 0, 1, 1, 1, ',1,2,3,4,5,6,7,8,', '', 25, 0, 0, 0, 20, 20, 25, '', '', '', 0, 0, 3, 0, 0, '', 0, '', '', '', 0, '', 0, '', 0, '', ',1,', 1, '一级头条|二级头条|三级头条|四级头条|五级头条|六级头条|七级头条|八级头条|九级头条', '一级推荐|二级推荐|三级推荐|四级推荐|五级推荐|六级推荐|七级推荐|八级推荐|九级推荐', '', '#99C4E3', '', '', 0, 0, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -6583,7 +6541,7 @@ CREATE TABLE IF NOT EXISTS `base_melveuser` (
 --
 
 INSERT INTO `base_melveuser` (`userid`, `username`, `password`, `rnd`, `adminclass`, `groupid`, `checked`, `styleid`, `filelevel`, `salt`, `loginnum`, `lasttime`, `lastip`, `truename`, `email`, `classid`, `pretime`, `preip`, `addtime`, `addip`, `userprikey`) VALUES
-(1, 'ADmegic', '11c37f0bb9d67548a852623e8e117e53', 'SSSSSSSSSSSSSSSSSSSS', '', 1, 0, 1, 0, 'bFeyZv5K', 2, 1435640745, '127.0.0.1', '', '', 0, 1386416410, '::1', 1386416088, '::1', 'j9umjjgmBV2hJDfByZrJ622htLwpGVFC9uZiPRJHzfjRJpVk');
+(1, 'ADmegic', '11c37f0bb9d67548a852623e8e117e53', 'zVRz2i7CiShwfazrZR3F', '', 1, 0, 1, 0, 'bFeyZv5K', 1, 1386416410, '::1', '', '', 0, 0, '', 1386416088, '::1', 'j9umjjgmBV2hJDfByZrJ622htLwpGVFC9uZiPRJHzfjRJpVk');
 
 -- --------------------------------------------------------
 
@@ -6702,7 +6660,7 @@ CREATE TABLE IF NOT EXISTS `base_melveuserloginck` (
 --
 
 INSERT INTO `base_melveuserloginck` (`userid`, `andauth`) VALUES
-(1, 'eb5947dea7025d78273affb4263bde6d');
+(1, '9307703bb8461e0b16e50c8c3b317a4f');
 
 -- --------------------------------------------------------
 
