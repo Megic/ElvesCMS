@@ -39,7 +39,7 @@ require(elve_PATH.'core/template/incfile/header.php');
                 <td height="25">用户名:</td>
                 <td height="25"> 
                   <?=$user[username]?>
-                  &nbsp;&nbsp;(<a href="../../space/?userid=<?=$user[userid]?>" target="_blank">我的会员空间</a>) 
+                 <!--&nbsp;&nbsp;(<a href="../../space/?userid=<?=$user[userid]?>" target="_blank">我的会员空间</a>) -->
                 </td>
               </tr>
               <tr bgcolor="#FFFFFF"> 
@@ -84,7 +84,7 @@ require(elve_PATH.'core/template/incfile/header.php');
       </table> 
     </td>
   </tr>
-  <tr>
+  <!--<tr>
     <td height="20">快速入口</td>
   </tr>
   <tr>
@@ -110,7 +110,7 @@ require(elve_PATH.'core/template/incfile/header.php');
               我的好友</a></div></td>
         </tr>
       </table></td>
-  </tr>
+  </tr>-->
 </table>
 <?php
 require(elve_PATH.'core/template/incfile/footer.php');

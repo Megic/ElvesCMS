@@ -34,7 +34,7 @@ function CheckChangeClass()
               </strong></td>
           </tr>
           <tr bgcolor="#FFFFFF"> 
-            <td height="32"> <select name=classid size="22" style="width:300px">
+            <td height="32"> <select name=classid size="22" style="width:480px;height:250px;">
                 <script src="<?=$classjs?>"></script>
               </select> </td>
           </tr>

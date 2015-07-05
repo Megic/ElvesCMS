@@ -10,7 +10,7 @@ $url="<a href=../../../>首页</a>&nbsp;>&nbsp;<a href=../cp/>会员中心</a>&n
 require(elve_PATH.'core/template/incfile/header.php');
 ?>
 <br>
-  <table width="500" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
+  <table width="600" border="0" align="center" cellpadding="3" cellspacing="1" class="tableborder">
   <form name="form1" method="post" action="../doaction.php">
     <input type=hidden name=elvefrom value="<?=ehtmlspecialchars($_GET['from'])?>">
     <input type=hidden name=melve value=login>

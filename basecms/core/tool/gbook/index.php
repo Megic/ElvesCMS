@@ -62,8 +62,8 @@ $url="<a href='".ReturnSiteIndexUrl()."'>".$fun_r['index']."</a>&nbsp;>&nbsp;".$
 <title>留言板 - Powered by ElvesCMS</title>
 <meta name="keywords" content="<?=$bname?>" />
 <meta name="description" content="<?=$bname?>" />
-<link href="/baselve/skin/default/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/baselve/skin/default/js/tabs.js"></script>
+<link href="http://localhost/mask/skin/default/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://localhost/mask/skin/default/js/tabs.js"></script>
 </head>
 <body class="listpage">
 <!-- 页头 -->
@@ -74,11 +74,11 @@ $url="<a href='".ReturnSiteIndexUrl()."'>".$fun_r['index']."</a>&nbsp;>&nbsp;".$
 <td width="63%">
 <!-- 登录 -->
 <script>
-document.write('<script src="/baselve/core/member/login/loginjs.php?t='+Math.random()+'"><'+'/script>');
+document.write('<script src="http://localhost/mask/core/member/login/loginjs.php?t='+Math.random()+'"><'+'/script>');
 </script>
 </td>
 <td align="right">
-<a onclick="window.external.addFavorite(location.href,document.title)" href="#elve">加入收藏</a> | <a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('/baselve/')" href="#elve">设为首页</a> | <a href="/baselve/core/member/cp/">会员中心</a> | <a href="/baselve/core/DoInfo/">我要投稿</a> | <a href="/baselve/core/web/?type=rss2" target="_blank">RSS<img src="/baselve/skin/default/images/rss.gif" border="0" hspace="2" /></a>
+<a onclick="window.external.addFavorite(location.href,document.title)" href="#elve">加入收藏</a> | <a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost/mask/')" href="#elve">设为首页</a> | <a href="http://localhost/mask/core/member/cp/">会员中心</a> | <a href="http://localhost/mask/core/DoInfo/">我要投稿</a> | <a href="http://localhost/mask/core/web/?type=rss2" target="_blank">RSS<img src="http://localhost/mask/skin/default/images/rss.gif" border="0" hspace="2" /></a>
 </td>
 </tr>
 </table></td>
@@ -86,23 +86,23 @@ document.write('<script src="/baselve/core/member/login/loginjs.php?t='+Math.ran
 </table>
 <table width="100%" border="0" cellpadding="0" cellspacing="10">
 <tr valign="middle">
-<td width="240" align="center"><a href="/baselve/"><img src="/baselve/skin/default/images/logo.gif" width="200" height="65" border="0" /></a></td>
-<td align="center"><a href="http://www.webelves.org/OpenSource/" target="_blank"><img src="/baselve/skin/default/images/opensource.gif" width="100%" height="70" border="0" /></a></td>
+<td width="240" align="center"><a href="http://localhost/mask/"><img src="http://localhost/mask/skin/default/images/logo.gif" width="200" height="65" border="0" /></a></td>
+<td align="center"><a href="http://www.webelves.org/OpenSource/" target="_blank"><img src="http://localhost/mask/skin/default/images/opensource.gif" width="100%" height="70" border="0" /></a></td>
 </tr>
 </table>
 <!-- 导航tab选项卡 -->
 <table width="920" border="0" align="center" cellpadding="0" cellspacing="0" class="nav">
   <tr> 
     <td class="nav_global"><ul>
-        <li class="curr" id="tabnav_btn_0" onmouseover="tabit(this)"><a href="/baselve/">首页</a></li>
-        <li id="tabnav_btn_1" onmouseover="tabit(this)"><a href="/baselve/news/">新闻中心</a></li>
-        <li id="tabnav_btn_2" onmouseover="tabit(this)"><a href="/baselve/download/">下载中心</a></li>
-        <li id="tabnav_btn_3" onmouseover="tabit(this)"><a href="/baselve/movie/">影视频道</a></li>
-        <li id="tabnav_btn_4" onmouseover="tabit(this)"><a href="/baselve/shop/">网上商城</a></li>
-        <li id="tabnav_btn_5" onmouseover="tabit(this)"><a href="/baselve/flash/">FLASH频道</a></li>
-        <li id="tabnav_btn_6" onmouseover="tabit(this)"><a href="/baselve/photo/">图片频道</a></li>
-        <li id="tabnav_btn_7" onmouseover="tabit(this)"><a href="/baselve/article/">文章中心</a></li>
-        <li id="tabnav_btn_8" onmouseover="tabit(this)"><a href="/baselve/info/">分类信息</a></li>
+        <li class="curr" id="tabnav_btn_0" onmouseover="tabit(this)"><a href="http://localhost/mask/">首页</a></li>
+        <li id="tabnav_btn_1" onmouseover="tabit(this)"><a href="http://localhost/mask/news/">新闻中心</a></li>
+        <li id="tabnav_btn_2" onmouseover="tabit(this)"><a href="http://localhost/mask/download/">下载中心</a></li>
+        <li id="tabnav_btn_3" onmouseover="tabit(this)"><a href="http://localhost/mask/movie/">影视频道</a></li>
+        <li id="tabnav_btn_4" onmouseover="tabit(this)"><a href="http://localhost/mask/shop/">网上商城</a></li>
+        <li id="tabnav_btn_5" onmouseover="tabit(this)"><a href="http://localhost/mask/flash/">FLASH频道</a></li>
+        <li id="tabnav_btn_6" onmouseover="tabit(this)"><a href="http://localhost/mask/photo/">图片频道</a></li>
+        <li id="tabnav_btn_7" onmouseover="tabit(this)"><a href="http://localhost/mask/article/">文章中心</a></li>
+        <li id="tabnav_btn_8" onmouseover="tabit(this)"><a href="http://localhost/mask/info/">分类信息</a></li>
       </ul></td>
   </tr>
 </table>
@@ -212,7 +212,7 @@ if($r[retext])
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td align="center" class="search">
-<form action="/baselve/core/search/index.php" method="post" name="searchform" id="searchform">
+<form action="http://localhost/mask/core/search/index.php" method="post" name="searchform" id="searchform">
 <table border="0" cellspacing="6" cellpadding="0">
 <tr>
 <td><strong>站内搜索：</strong>
@@ -230,9 +230,9 @@ if($r[retext])
 <option value="info">分类信息</option>
 </select>
 </td>
-<td><input type="image" class="inputSub" src="/baselve/skin/default/images/search.gif" />
+<td><input type="image" class="inputSub" src="http://localhost/mask/skin/default/images/search.gif" />
 </td>
-<td><a href="/baselve/search/" target="_blank">高级搜索</a></td>
+<td><a href="http://localhost/mask/search/" target="_blank">高级搜索</a></td>
 </tr>
 </table>
 </form>
@@ -242,9 +242,9 @@ if($r[retext])
 <td>
 	<table width="100%" border="0" cellpadding="0" cellspacing="4" class="copyright">
         <tr> 
-          <td align="center"><a href="/baselve/">网站首页</a> | <a href="#">关于我们</a> 
+          <td align="center"><a href="http://localhost/mask/">网站首页</a> | <a href="#">关于我们</a> 
             | <a href="#">服务条款</a> | <a href="#">广告服务</a> | <a href="#">联系我们</a> 
-            | <a href="#">网站地图</a> | <a href="#">免责声明</a> | <a href="/baselve/core/wap/" target="_blank">WAP</a></td>
+            | <a href="#">网站地图</a> | <a href="#">免责声明</a> | <a href="http://localhost/mask/core/wap/" target="_blank">WAP</a></td>
         </tr>
         <tr> 
           <td align="center">Powered by <strong><a href="http://www.webelves.org" target="_blank">ElvesCMS</a></strong> 

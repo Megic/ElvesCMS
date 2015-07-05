@@ -36,7 +36,8 @@ document.add.softfj.value=a.replace("/"+str,"");
   </tr>
   <tr> 
     <td width=16% height=25 bgcolor=ffffff>软件预览图</td>
-    <td bgcolor=ffffff><input type="file" name="titlepicfile" size="45">
+    <td bgcolor=ffffff>
+<input type="file" name="titlepicfile" size="45">
 </td>
   </tr>
   <tr> 

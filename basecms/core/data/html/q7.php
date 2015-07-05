@@ -9,7 +9,8 @@ if(!defined('InElvesCMS'))
 </td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>关键字</td><td bgcolor='ffffff'>
 <input name="keyboard" type="text" size=42 value="<?=stripSlashes($r[keyboard])?>">
 <font color="#666666">(多个请用&quot;,&quot;隔开)</font>
-</td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>标题图片</td><td bgcolor='ffffff'><input type="file" name="titlepicfile" size="45">
+</td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>标题图片</td><td bgcolor='ffffff'>
+<input type="file" name="titlepicfile" size="45">
 </td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>内容简介</td><td bgcolor='ffffff'><textarea name="smalltext" cols="60" rows="10" id="smalltext"><?=$elvefirstpost==1?"":DoReqValue($mid,'smalltext',stripSlashes($r[smalltext]))?></textarea>
 </td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>作者</td><td bgcolor='ffffff'>
 <input name="writer" type="text" id="writer" value="<?=$elvefirstpost==1?"":DoReqValue($mid,'writer',stripSlashes($r[writer]))?>" size="">

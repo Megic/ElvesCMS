@@ -31,11 +31,12 @@ if(!defined('InElvesCMS'))
 </td></tr><tr><td bgcolor=ffffff>市场价格</td><td bgcolor=ffffff><input name="tprice" type="text" id="tprice" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[tprice]))?>" size="60">
 </td></tr><tr><td bgcolor=ffffff>购买价格</td><td bgcolor=ffffff><input name="price" type="text" id="price" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[price]))?>" size="60">
 </td></tr><tr><td bgcolor=ffffff>积分购买</td><td bgcolor=ffffff><input name="buyfen" type="text" id="buyfen" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[buyfen]))?>" size="60">
-</td></tr><tr><td bgcolor=ffffff>库存</td><td bgcolor=ffffff><input name="pmaxnum" type="text" id="pmaxnum" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[pmaxnum]))?>" size="60">
-</td></tr><tr><td bgcolor=ffffff>商品缩略片</td><td bgcolor=ffffff><input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
+</td></tr><tr><td bgcolor=ffffff>库存</td><td bgcolor=ffffff><input name="pmaxnum" type="text" id="pmaxnum" value="<?=$elvefirstpost==1?"100":ehtmlspecialchars(stripSlashes($r[pmaxnum]))?>" size="60">
+</td></tr><tr><td bgcolor=ffffff>商品缩略片</td><td bgcolor=ffffff>
+<input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="60">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=titlepic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td></tr><tr><td bgcolor=ffffff>商品大图</td><td bgcolor=ffffff>
-<input name="productpic" type="text" id="productpic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[productpic]))?>" size="45">
+<input name="productpic" type="text" id="productpic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[productpic]))?>" size="60">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=productpic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td></tr><tr><td bgcolor=ffffff>商品介绍</td><td bgcolor=ffffff><?=elve_ShowEditorVar("newstext",$elvefirstpost==1?"":stripSlashes($r[newstext]),"Default","","300","100%")?>
 <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#DBEAF5">

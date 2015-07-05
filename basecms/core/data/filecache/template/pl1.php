@@ -33,13 +33,13 @@ h2 { color: #1e3a9e; font-size: 25px; font-weight: bold;  }
 .ecommenttext {clear:left;margin:0;padding:0;}
 -->
 </style>
-<script src="/baselve/core/data/js/ajax.js"></script>
+<script src="http://localhost/mask/core/data/js/ajax.js"></script>
 </head>
 
 <body topmargin="0">
 <table width="766" border="0" align="center" cellpadding="3" cellspacing="1">
   <tr>
-    <td width="210"><a href="/baselve/"><img src="/baselve/skin/default/images/logo.gif" border="0" /></a></td>
+    <td width="210"><a href="http://localhost/mask/"><img src="http://localhost/mask/skin/default/images/logo.gif" border="0" /></a></td>
     <td><h1>网友评论</h1></td>
     <td><div align="right"><a href="#tosaypl"><strong><font color="#FF0000">我也评两句</font></strong></a></div></td>
   </tr>
@@ -131,7 +131,7 @@ while($r=$Elves->fetch($sql))
       </table>
       <table width="100%" border="0" cellspacing="1" cellpadding="3">
         <tr>
-          <td background="/baselve/skin/default/images/plhrbg.gif"></td>
+          <td background="http://localhost/mask/skin/default/images/plhrbg.gif"></td>
         </tr>
       </table>
       
@@ -167,7 +167,7 @@ while($r=$Elves->fetch($sql))
             <input name="password" type="password" id="password" size="12" value="<?=$lpassword?>" />
             验证码： 
             <input name="key" type="text" id="key" size="6" />
-              <img src="/baselve/core/ShowKey/?v=pl" align="middle" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/baselve/core/member/register/" target="_blank">还没有注册？</a></td>
+              <img src="http://localhost/mask/core/ShowKey/?v=pl" align="middle" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://localhost/mask/core/member/register/" target="_blank">还没有注册？</a></td>
         </tr>
       </table></td>
   </tr>
@@ -186,7 +186,7 @@ while($r=$Elves->fetch($sql))
         </tr>
         <tr> 
           <td><div align="center"> 
-              <script src="/baselve/d/js/js/plface.js"></script>
+              <script src="http://localhost/mask/d/js/js/plface.js"></script>
             </div></td>
         </tr>
       </table> </td>
@@ -201,7 +201,7 @@ while($r=$Elves->fetch($sql))
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td align="center" class="search">
-<form action="/baselve/core/search/index.php" method="post" name="searchform" id="searchform">
+<form action="http://localhost/mask/core/search/index.php" method="post" name="searchform" id="searchform">
 <table border="0" cellspacing="6" cellpadding="0">
 <tr>
 <td><strong>站内搜索：</strong>
@@ -219,9 +219,9 @@ while($r=$Elves->fetch($sql))
 <option value="info">分类信息</option>
 </select>
 </td>
-<td><input type="image" class="inputSub" src="/baselve/skin/default/images/search.gif" />
+<td><input type="image" class="inputSub" src="http://localhost/mask/skin/default/images/search.gif" />
 </td>
-<td><a href="/baselve/search/" target="_blank">高级搜索</a></td>
+<td><a href="http://localhost/mask/search/" target="_blank">高级搜索</a></td>
 </tr>
 </table>
 </form>
@@ -231,9 +231,9 @@ while($r=$Elves->fetch($sql))
 <td>
 	<table width="100%" border="0" cellpadding="0" cellspacing="4" class="copyright">
         <tr> 
-          <td align="center"><a href="/baselve/">网站首页</a> | <a href="#">关于我们</a> 
+          <td align="center"><a href="http://localhost/mask/">网站首页</a> | <a href="#">关于我们</a> 
             | <a href="#">服务条款</a> | <a href="#">广告服务</a> | <a href="#">联系我们</a> 
-            | <a href="#">网站地图</a> | <a href="#">免责声明</a> | <a href="/baselve/core/wap/" target="_blank">WAP</a></td>
+            | <a href="#">网站地图</a> | <a href="#">免责声明</a> | <a href="http://localhost/mask/core/wap/" target="_blank">WAP</a></td>
         </tr>
         <tr> 
           <td align="center">Powered by <strong><a href="http://www.webelves.org" target="_blank">ElvesCMS</a></strong> 

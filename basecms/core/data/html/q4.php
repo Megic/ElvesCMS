@@ -19,7 +19,8 @@ if(!defined('InElvesCMS'))
   </tr>
   <tr>
     <td width=16% height=25 bgcolor=ffffff>作品预览图</td>
-    <td bgcolor=ffffff><input type="file" name="titlepicfile" size="45">
+    <td bgcolor=ffffff>
+<input type="file" name="titlepicfile" size="45">
 </td>
   </tr>
   <tr>

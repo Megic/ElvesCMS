@@ -23,7 +23,8 @@ if(!defined('InElvesCMS'))
       </select></td></tr><tr><td width=16% height=25 bgcolor=ffffff>图片尺寸</td><td bgcolor=ffffff><input name="picsize" type="text" id="picsize" value="<?=$elvefirstpost==1?"":DoReqValue($mid,'picsize',stripSlashes($r[picsize]))?>" size="42">
 </td></tr><tr><td width=16% height=25 bgcolor=ffffff>图片分辨率</td><td bgcolor=ffffff><input name="picfbl" type="text" id="picfbl" value="<?=$elvefirstpost==1?"":DoReqValue($mid,'picfbl',stripSlashes($r[picfbl]))?>" size="42">
 </td></tr><tr><td width=16% height=25 bgcolor=ffffff>来源</td><td bgcolor=ffffff><input name="picfrom" type="text" id="picfrom" value="<?=$elvefirstpost==1?"":DoReqValue($mid,'picfrom',stripSlashes($r[picfrom]))?>" size="42">
-</td></tr><tr><td width=16% height=25 bgcolor=ffffff>图片小图</td><td bgcolor=ffffff><input type="file" name="titlepicfile" size="45">
+</td></tr><tr><td width=16% height=25 bgcolor=ffffff>图片小图</td><td bgcolor=ffffff>
+<input type="file" name="titlepicfile" size="45">
 </td></tr><tr><td width=16% height=25 bgcolor=ffffff>图片大图</td><td bgcolor=ffffff>
 <input type="file" name="picurlfile" size="45">
 </td></tr><tr><td width=16% height=25 bgcolor=ffffff>图片简介</td><td bgcolor=ffffff><textarea name="picsay" cols="60" rows="10" id="picsay"><?=$elvefirstpost==1?"":DoReqValue($mid,'picsay',stripSlashes($r[picsay]))?></textarea>

@@ -87,7 +87,8 @@ if(!defined('InElvesCMS'))
   </tr>
   <tr> 
     <td width=16% height=25 bgcolor=ffffff>图片小图</td>
-    <td bgcolor=ffffff><input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
+    <td bgcolor=ffffff>
+<input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=titlepic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td>
   </tr>

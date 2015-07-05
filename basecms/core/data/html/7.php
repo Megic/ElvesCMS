@@ -51,7 +51,8 @@ if(!defined('InElvesCMS'))
 </table>
 </td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>发布时间</td><td bgcolor='ffffff'>
 <input name="newstime" type="text" value="<?=$r[newstime]?>"><input type=button name=button value="设为当前时间" onclick="document.add.newstime.value='<?=$todaytime?>'">
-</td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>标题图片</td><td bgcolor='ffffff'><input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
+</td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>标题图片</td><td bgcolor='ffffff'>
+<input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=titlepic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>内容简介</td><td bgcolor='ffffff'><textarea name="smalltext" cols="80" rows="10" id="smalltext"><?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[smalltext]))?></textarea>
 </td></tr><tr><td width='16%' height=25 bgcolor='ffffff'>作者</td><td bgcolor='ffffff'>

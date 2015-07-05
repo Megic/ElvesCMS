@@ -23,7 +23,8 @@ if(!defined('InElvesCMS'))
 </table>
 </td></tr><tr><td bgcolor=ffffff>发布时间</td><td bgcolor=ffffff>
 <input name="newstime" type="text" value="<?=$r[newstime]?>"><input type=button name=button value="设为当前时间" onclick="document.add.newstime.value='<?=$todaytime?>'">
-</td></tr><tr><td bgcolor=ffffff>影片缩略图</td><td bgcolor=ffffff><input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
+</td></tr><tr><td bgcolor=ffffff>影片缩略图</td><td bgcolor=ffffff>
+<input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=titlepic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td></tr><tr><td bgcolor=ffffff>影片类型</td><td bgcolor=ffffff><select name="movietype" id="movietype"><option value="港台影视"<?=$r[movietype]=="港台影视"?' selected':''?>>港台影视</option><option value="海外影视"<?=$r[movietype]=="海外影视"?' selected':''?>>海外影视</option><option value="大陆影视"<?=$r[movietype]=="大陆影视"?' selected':''?>>大陆影视</option><option value="日韩影视"<?=$r[movietype]=="日韩影视"?' selected':''?>>日韩影视</option></select></td></tr><tr><td bgcolor=ffffff>出品公司</td><td bgcolor=ffffff>
 <input name="company" type="text" id="company" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[company]))?>" size="">

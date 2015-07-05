@@ -23,7 +23,8 @@ if(!defined('InElvesCMS'))
 </table>
 </td></tr><tr><td bgcolor=ffffff>发布时间</td><td bgcolor=ffffff>
 <input name="newstime" type="text" value="<?=$r[newstime]?>"><input type=button name=button value="设为当前时间" onclick="document.add.newstime.value='<?=$todaytime?>'">
-</td></tr><tr><td bgcolor=ffffff>软件预览图</td><td bgcolor=ffffff><input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
+</td></tr><tr><td bgcolor=ffffff>软件预览图</td><td bgcolor=ffffff>
+<input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=titlepic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td></tr><tr><td bgcolor=ffffff>软件作者</td><td bgcolor=ffffff><input name="softwriter" type="text" id="softwriter" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[softwriter]))?>" size="60">
 </td></tr><tr><td bgcolor=ffffff>厂商主页</td><td bgcolor=ffffff><input name="homepage" type="text" id="homepage" value="<?=$elvefirstpost==1?"http://":ehtmlspecialchars(stripSlashes($r[homepage]))?>" size="60">

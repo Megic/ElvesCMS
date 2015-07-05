@@ -107,13 +107,15 @@ if(!defined('InElvesCMS'))
   </tr>
   <tr>
     <td width=16% height=25 bgcolor=ffffff>商品缩略片</td>
-    <td bgcolor=ffffff><input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="60">
+    <td bgcolor=ffffff>
+<input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="60">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=titlepic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td>
   </tr>
   <tr>
     <td width=16% height=25 bgcolor=ffffff>商品大图</td>
-    <td bgcolor=ffffff><input name="productpic" type="text" id="productpic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[productpic]))?>" size="60">
+    <td bgcolor=ffffff>
+<input name="productpic" type="text" id="productpic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[productpic]))?>" size="60">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=productpic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td>
   </tr>

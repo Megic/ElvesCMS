@@ -33,7 +33,8 @@ if(!defined('InElvesCMS'))
       </select></td></tr><tr><td bgcolor=ffffff>图片尺寸</td><td bgcolor=ffffff><input name="picsize" type="text" id="picsize" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[picsize]))?>" size="">
 </td></tr><tr><td bgcolor=ffffff>图片分辨率</td><td bgcolor=ffffff><input name="picfbl" type="text" id="picfbl" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[picfbl]))?>" size="">
 </td></tr><tr><td bgcolor=ffffff>来源</td><td bgcolor=ffffff><input name="picfrom" type="text" id="picfrom" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[picfrom]))?>" size="60">
-</td></tr><tr><td bgcolor=ffffff>图片小图</td><td bgcolor=ffffff><input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
+</td></tr><tr><td bgcolor=ffffff>图片小图</td><td bgcolor=ffffff>
+<input name="titlepic" type="text" id="titlepic" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[titlepic]))?>" size="45">
 <a onclick="window.open('elveeditor/FileMain.php?type=1&classid=<?=$classid?>&infoid=<?=$id?>&filepass=<?=$filepass?>&sinfo=1&doing=1&field=titlepic','','width=700,height=550,scrollbars=yes');" title="选择已上传的图片"><img src="../data/images/changeimg.gif" border="0" align="absbottom"></a> 
 </td></tr><tr><td bgcolor=ffffff>图片大图</td><td bgcolor=ffffff>
 <input name="picurl" type="text" id="picurl" value="<?=$elvefirstpost==1?"":ehtmlspecialchars(stripSlashes($r[picurl]))?>" size="45">
