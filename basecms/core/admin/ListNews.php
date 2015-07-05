@@ -23,7 +23,7 @@ if(!$class_r[$classid][classid]||!$class_r[$classid][tbname])
 	printerror('ErrorUrl','history.go(-1)');
 }
 //栏目
-$thiscr=$Elves->fetch1("select tbname,listorder,allinfos,infos from {$dbtbpre}melveclass where classid='$classid'");
+$thiscr=$Elves->fetch1("select tbname,nreinfo,listorder,allinfos,infos from {$dbtbpre}melveclass where classid='$classid'");
 if(!$thiscr['tbname'])
 {
 	printerror('ErrorUrl','history.go(-1)');

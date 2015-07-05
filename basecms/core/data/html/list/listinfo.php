@@ -275,12 +275,12 @@ function PushInfoToZt(form)
       <td height="32"> <div align="center"> 
           <?=$myid?>
         </div></td>
-      <td height="25"> <div align="left"> 
+      <td height="25"> <div align="left">
           <?=$st?>
           <?=$showtitlepic?>
-          <a href='<?=$titleurl?>' target=_blank title="<?=$oldtitle?>"> 
+          <?php if($thiscr['nreinfo']) {?> <a href="AddNews.php?melve=EditNews&id=<?=$r[id]?>&classid=<?=$classid?>&bclassid=<?=$bclassid?><?=$addelvecheck?>"><?php }else{?> <a href='<?=$titleurl?>' target=_blank title="<?=$oldtitle?>"> <?php }?>
           <?=$r[title]?>
-          </a> 
+      </a>
           <?=$qf?>
         </div></td>
       <td height="25"> <div align="center"> 
